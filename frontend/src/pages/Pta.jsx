@@ -1,10 +1,11 @@
 // Pressure transient analysis: automatic build-up interpretation for every detected shut-in.
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { CircleSlash, ClipboardCheck, Download, RotateCcw, SlidersHorizontal, Sparkles, Timer } from 'lucide-react'
+import { CircleSlash, ClipboardCheck, Download, RotateCcw, ShieldCheck, SlidersHorizontal, Sparkles, Timer, Waves } from 'lucide-react'
 import LogRangeSlider from '../components/LogRangeSlider'
 import Plot from '../components/Plot'
-import { Card, ErrorBox, Pill, Skeleton } from '../components/ui'
+import { Card, ErrorBox, Pill, Skeleton, Tabs } from '../components/ui'
 import { COLORS, fmt, useApi } from '../lib'
+import PtaValidation from './PtaValidation'
 
 const BOUNDARY_LABEL = { infinite: 'Infinite-acting', constant_pressure: 'Pressure support', closed: 'Closed boundary' }
 const MODEL_STYLE = { infinite: 'dot', constant_pressure: 'dash', closed: 'dashdot' }
@@ -306,6 +307,7 @@ function TypeBanner({ e }) {
 export default function Pta() {
   const events = useApi('/api/pta/events')
   const [selected, setSelected] = useState(null)
+  const [tab, setTab] = useState(() => new URLSearchParams(window.location.search).get('tab') || 'analysis')   // ?tab=validation
   const [win, setWin] = useState(null)              // radial window {start, end, manual}; null = automatic
   const [detail, setDetail] = useState(null)
   const [busy, setBusy] = useState(false)
@@ -355,8 +357,11 @@ export default function Pta() {
       <div className="text-sm text-muted">The uploaded period contains no shut-in, so there is nothing to interpret. Rates are still on the VFM pages.</div></Card>
   }
 
+  const tabs = [{ id: 'analysis', label: 'Analysis', icon: Waves }, { id: 'validation', label: 'Validation', icon: ShieldCheck }]
   return (
     <div className="space-y-5">
+      <Tabs tabs={tabs} value={tab} onChange={setTab} />
+      {tab === 'validation' ? <PtaValidation selected={selected} onSelect={selectEvent} /> : (<>
       <div className="flex items-center justify-between text-xs text-muted">
         <span>{list ? <><span className="num text-ink">{list.length}</span> shut-ins detected automatically (choke = 0 %) · <span className="num text-ink">{list.filter(isTest).length}</span> planned build-up tests · rate q from the virtual flow meter</> : 'Detecting shut-ins…'}</span>
         {current && <span>Selected: <span className="text-ink">{current.well_name}</span> · {current.t_shut.slice(0, 10)}</span>}
@@ -385,6 +390,7 @@ export default function Pta() {
 
       {list && <ResultsTable events={list} selected={selected} onSelect={selectEvent} />}
       {list && <UnplannedTable events={list} selected={selected} onSelect={selectEvent} />}
+      </>)}
     </div>
   )
 }

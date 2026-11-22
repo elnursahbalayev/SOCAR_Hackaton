@@ -117,8 +117,8 @@ About 20 s after start-up the console prints `warm-up done`; from then on every 
 |---|---|
 | Overview | Field KPIs, production chart, alerts, per-well table |
 | ① Data | Upload, pipeline progress, data-quality report, measurement explorer |
-| ② Virtual Flow Meter | Model card and validation; daily rates per well vs measured tests; reservoir and flowing pressure; well calibration |
-| ③ Well Test Analysis | Every shut-in: history, log-log derivative, Horner and model-match plots; k, skin, ΔP skin, P*, flow efficiency; radial-flow window adjustable by hand; interpretation |
+| ② Virtual Flow Meter | **Daily rates:** model card, daily rates per well vs measured tests with a P10–P90 band, reservoir and flowing pressure, well calibration, **IPR and what-if** (lower Pwf, remove skin → oil and $ gain). **Forecast:** next 3–12 months per well and field if operating conditions stay as today, with P10–P90. **Validation:** official metrics, every test measured vs predicted, error by forecast horizon / well / date, paired significance tests, step-by-step build-up, 47-model comparison, test-separator and physics checks |
+| ③ Well Test Analysis | **Analysis:** every shut-in with history, log-log derivative, Horner and model-match plots; k, skin, ΔP skin, P*, flow efficiency; radial-flow window adjustable by hand; interpretation. **Validation:** accuracy on 180 synthetic build-ups, Horner vs model-match cross-check, radial-flow quality, build-up vs VFM reservoir pressure, sensitivity of k and skin per event |
 | ④ Insights | Stimulation upside ($ at a chosen oil price), gas-lift efficiency, reservoir health vs bubble point, deferred oil, build-up test plan |
 | ⑤ Report | Downloads: VFM and PTA results as **Excel or CSV** (CSV in the organisers' template format), all shut-ins CSV, PTA plots ZIP, HTML engineering report (print to PDF), the model `.pkl` |
 

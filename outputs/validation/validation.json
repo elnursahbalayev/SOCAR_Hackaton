@@ -1,0 +1,3012 @@
+{
+ "n_tests": 85,
+ "metrics": {
+  "between_tests": {
+   "oil": {
+    "R2": 0.9988,
+    "MAPE": 2.3918,
+    "WAPE": 2.0291
+   },
+   "water": {
+    "R2": 0.9966,
+    "MAPE": 3.4239,
+    "WAPE": 3.0815
+   },
+   "gas": {
+    "R2": 0.9946,
+    "MAPE": 5.4979,
+    "WAPE": 4.3279
+   }
+  },
+  "forecast": {
+   "oil": {
+    "R2": 0.9958,
+    "MAPE": 4.2788,
+    "WAPE": 3.5208
+   },
+   "water": {
+    "R2": 0.9879,
+    "MAPE": 4.5468,
+    "WAPE": 4.9175
+   },
+   "gas": {
+    "R2": 0.993,
+    "MAPE": 8.0342,
+    "WAPE": 5.6304
+   }
+  }
+ },
+ "loto": [
+  {
+   "well": "GL-01",
+   "time": "2025-01-03 19:59",
+   "oil": 1157.6,
+   "water": 832.3,
+   "gas": 336.0,
+   "oil_pred": 1223.51,
+   "water_pred": 807.47,
+   "gas_pred": 339.89
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-01-31 23:25",
+   "oil": 1201.6,
+   "water": 795.0,
+   "gas": 323.6,
+   "oil_pred": 1188.1,
+   "water_pred": 824.49,
+   "gas_pred": 330.05
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-03-03 12:27",
+   "oil": 1135.5,
+   "water": 833.6,
+   "gas": 314.6,
+   "oil_pred": 1107.63,
+   "water_pred": 793.34,
+   "gas_pred": 307.7
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-04-02 18:53",
+   "oil": 1078.4,
+   "water": 816.5,
+   "gas": 316.1,
+   "oil_pred": 1045.47,
+   "water_pred": 776.0,
+   "gas_pred": 290.43
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-05-03 07:11",
+   "oil": 984.8,
+   "water": 755.4,
+   "gas": 249.3,
+   "oil_pred": 992.96,
+   "water_pred": 773.01,
+   "gas_pred": 275.84
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-06-02 20:49",
+   "oil": 1007.6,
+   "water": 723.8,
+   "gas": 252.9,
+   "oil_pred": 956.98,
+   "water_pred": 774.59,
+   "gas_pred": 265.85
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-07-03 13:22",
+   "oil": 900.6,
+   "water": 772.0,
+   "gas": 255.0,
+   "oil_pred": 909.18,
+   "water_pred": 747.74,
+   "gas_pred": 252.57
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-08-02 22:15",
+   "oil": 811.3,
+   "water": 723.4,
+   "gas": 231.7,
+   "oil_pred": 841.66,
+   "water_pred": 726.11,
+   "gas_pred": 233.81
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-09-03 04:33",
+   "oil": 791.2,
+   "water": 711.7,
+   "gas": 201.7,
+   "oil_pred": 777.42,
+   "water_pred": 708.04,
+   "gas_pred": 215.97
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-01-06 20:53",
+   "oil": 1432.3,
+   "water": 1436.9,
+   "gas": 447.8,
+   "oil_pred": 1448.89,
+   "water_pred": 1456.29,
+   "gas_pred": 436.7
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-02-04 00:17",
+   "oil": 1404.3,
+   "water": 1418.6,
+   "gas": 412.0,
+   "oil_pred": 1394.28,
+   "water_pred": 1483.68,
+   "gas_pred": 420.24
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-04-05 22:53",
+   "oil": 1298.1,
+   "water": 1491.8,
+   "gas": 380.0,
+   "oil_pred": 1299.77,
+   "water_pred": 1483.42,
+   "gas_pred": 391.75
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-05-06 07:44",
+   "oil": 1285.8,
+   "water": 1548.6,
+   "gas": 397.3,
+   "oil_pred": 1278.23,
+   "water_pred": 1490.42,
+   "gas_pred": 385.26
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-06-05 16:33",
+   "oil": 1262.7,
+   "water": 1585.5,
+   "gas": 395.6,
+   "oil_pred": 1248.46,
+   "water_pred": 1501.61,
+   "gas_pred": 376.29
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-07-06 13:24",
+   "oil": 1237.3,
+   "water": 1523.9,
+   "gas": 367.0,
+   "oil_pred": 1197.64,
+   "water_pred": 1511.81,
+   "gas_pred": 360.97
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-08-06 04:47",
+   "oil": 1174.7,
+   "water": 1437.1,
+   "gas": 349.3,
+   "oil_pred": 1178.47,
+   "water_pred": 1557.96,
+   "gas_pred": 355.19
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-09-06 05:05",
+   "oil": 1149.1,
+   "water": 1569.2,
+   "gas": 346.4,
+   "oil_pred": 1192.27,
+   "water_pred": 1517.55,
+   "gas_pred": 359.35
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-01-09 15:31",
+   "oil": 755.5,
+   "water": 356.4,
+   "gas": 177.0,
+   "oil_pred": 728.32,
+   "water_pred": 332.62,
+   "gas_pred": 161.69
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-02-07 02:36",
+   "oil": 729.8,
+   "water": 341.7,
+   "gas": 163.4,
+   "oil_pred": 731.62,
+   "water_pred": 344.83,
+   "gas_pred": 162.42
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-03-09 17:26",
+   "oil": 761.7,
+   "water": 344.3,
+   "gas": 168.0,
+   "oil_pred": 761.02,
+   "water_pred": 366.7,
+   "gas_pred": 168.95
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-04-08 16:50",
+   "oil": 712.5,
+   "water": 373.0,
+   "gas": 154.5,
+   "oil_pred": 743.34,
+   "water_pred": 363.33,
+   "gas_pred": 165.02
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-05-09 12:35",
+   "oil": 729.0,
+   "water": 385.4,
+   "gas": 159.8,
+   "oil_pred": 766.44,
+   "water_pred": 380.69,
+   "gas_pred": 170.15
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-06-08 13:09",
+   "oil": 782.0,
+   "water": 382.5,
+   "gas": 184.2,
+   "oil_pred": 752.26,
+   "water_pred": 387.63,
+   "gas_pred": 167.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-07-09 13:35",
+   "oil": 762.7,
+   "water": 391.5,
+   "gas": 172.2,
+   "oil_pred": 772.38,
+   "water_pred": 403.69,
+   "gas_pred": 171.47
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-08-09 10:46",
+   "oil": 786.5,
+   "water": 410.4,
+   "gas": 148.4,
+   "oil_pred": 740.59,
+   "water_pred": 401.78,
+   "gas_pred": 164.41
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-09-09 00:16",
+   "oil": 733.8,
+   "water": 417.3,
+   "gas": 167.2,
+   "oil_pred": 785.85,
+   "water_pred": 419.55,
+   "gas_pred": 174.46
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-01-12 22:31",
+   "oil": 822.6,
+   "water": 355.8,
+   "gas": 231.4,
+   "oil_pred": 835.99,
+   "water_pred": 346.17,
+   "gas_pred": 198.55
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-02-09 15:03",
+   "oil": 839.7,
+   "water": 368.8,
+   "gas": 179.5,
+   "oil_pred": 805.32,
+   "water_pred": 339.45,
+   "gas_pred": 191.26
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-03-12 16:12",
+   "oil": 788.1,
+   "water": 348.4,
+   "gas": 183.1,
+   "oil_pred": 817.07,
+   "water_pred": 349.0,
+   "gas_pred": 194.05
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-04-11 19:37",
+   "oil": 690.3,
+   "water": 304.9,
+   "gas": 184.9,
+   "oil_pred": 688.6,
+   "water_pred": 310.04,
+   "gas_pred": 163.54
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-05-12 13:47",
+   "oil": 820.1,
+   "water": 346.3,
+   "gas": 189.1,
+   "oil_pred": 826.61,
+   "water_pred": 376.3,
+   "gas_pred": 196.32
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-06-11 22:22",
+   "oil": 807.9,
+   "water": 374.9,
+   "gas": 224.9,
+   "oil_pred": 801.24,
+   "water_pred": 369.02,
+   "gas_pred": 190.29
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-07-13 03:33",
+   "oil": 800.6,
+   "water": 379.1,
+   "gas": 165.5,
+   "oil_pred": 796.89,
+   "water_pred": 376.42,
+   "gas_pred": 189.26
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-08-12 21:51",
+   "oil": 732.3,
+   "water": 344.2,
+   "gas": 182.0,
+   "oil_pred": 728.53,
+   "water_pred": 358.38,
+   "gas_pred": 173.03
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-09-11 21:25",
+   "oil": 578.2,
+   "water": 307.6,
+   "gas": 142.7,
+   "oil_pred": 587.98,
+   "water_pred": 289.27,
+   "gas_pred": 139.65
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-01-15 13:56",
+   "oil": 879.6,
+   "water": 409.8,
+   "gas": 239.4,
+   "oil_pred": 862.21,
+   "water_pred": 406.32,
+   "gas_pred": 280.82
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-02-12 10:16",
+   "oil": 851.3,
+   "water": 418.0,
+   "gas": 253.0,
+   "oil_pred": 878.27,
+   "water_pred": 415.98,
+   "gas_pred": 286.05
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-03-15 12:25",
+   "oil": 852.3,
+   "water": 410.7,
+   "gas": 266.0,
+   "oil_pred": 866.37,
+   "water_pred": 429.77,
+   "gas_pred": 282.18
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-04-15 07:59",
+   "oil": 821.4,
+   "water": 385.3,
+   "gas": 254.0,
+   "oil_pred": 771.78,
+   "water_pred": 416.96,
+   "gas_pred": 251.37
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-05-15 16:27",
+   "oil": 784.1,
+   "water": 432.4,
+   "gas": 255.7,
+   "oil_pred": 771.43,
+   "water_pred": 408.53,
+   "gas_pred": 251.26
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-07-16 09:18",
+   "oil": 702.2,
+   "water": 430.2,
+   "gas": 224.2,
+   "oil_pred": 719.48,
+   "water_pred": 416.32,
+   "gas_pred": 234.34
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-08-15 21:55",
+   "oil": 697.2,
+   "water": 452.8,
+   "gas": 252.8,
+   "oil_pred": 719.98,
+   "water_pred": 416.68,
+   "gas_pred": 234.5
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-09-14 19:50",
+   "oil": 733.3,
+   "water": 413.9,
+   "gas": 200.1,
+   "oil_pred": 687.01,
+   "water_pred": 461.58,
+   "gas_pred": 223.76
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-01-18 10:10",
+   "oil": 805.7,
+   "water": 506.5,
+   "gas": 194.0,
+   "oil_pred": 858.63,
+   "water_pred": 502.38,
+   "gas_pred": 186.32
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-02-15 03:52",
+   "oil": 823.3,
+   "water": 525.5,
+   "gas": 190.8,
+   "oil_pred": 792.07,
+   "water_pred": 490.26,
+   "gas_pred": 171.88
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-03-18 12:35",
+   "oil": 662.6,
+   "water": 459.5,
+   "gas": 129.7,
+   "oil_pred": 667.25,
+   "water_pred": 456.62,
+   "gas_pred": 144.79
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-04-18 01:07",
+   "oil": 692.5,
+   "water": 432.2,
+   "gas": 136.3,
+   "oil_pred": 662.54,
+   "water_pred": 445.13,
+   "gas_pred": 143.77
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-05-19 01:14",
+   "oil": 626.3,
+   "water": 438.5,
+   "gas": 139.8,
+   "oil_pred": 623.15,
+   "water_pred": 436.69,
+   "gas_pred": 135.22
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-06-18 06:13",
+   "oil": 713.5,
+   "water": 500.4,
+   "gas": 147.9,
+   "oil_pred": 707.51,
+   "water_pred": 517.04,
+   "gas_pred": 153.53
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-07-19 14:40",
+   "oil": 712.8,
+   "water": 506.5,
+   "gas": 124.6,
+   "oil_pred": 691.34,
+   "water_pred": 521.46,
+   "gas_pred": 150.02
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-08-18 11:20",
+   "oil": 744.1,
+   "water": 572.2,
+   "gas": 135.1,
+   "oil_pred": 731.8,
+   "water_pred": 546.86,
+   "gas_pred": 158.8
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-09-18 00:40",
+   "oil": 695.1,
+   "water": 556.5,
+   "gas": 157.4,
+   "oil_pred": 738.63,
+   "water_pred": 559.17,
+   "gas_pred": 160.28
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-01-21 07:49",
+   "oil": 4696.0,
+   "water": 1694.8,
+   "gas": 1185.1,
+   "oil_pred": 4805.22,
+   "water_pred": 1735.35,
+   "gas_pred": 1289.24
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-02-18 07:20",
+   "oil": 4807.8,
+   "water": 1797.4,
+   "gas": 1254.0,
+   "oil_pred": 4831.24,
+   "water_pred": 1814.46,
+   "gas_pred": 1296.22
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-03-21 09:15",
+   "oil": 4789.2,
+   "water": 1882.9,
+   "gas": 1282.1,
+   "oil_pred": 4738.91,
+   "water_pred": 1874.9,
+   "gas_pred": 1271.45
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-04-21 07:25",
+   "oil": 4733.7,
+   "water": 1918.9,
+   "gas": 1222.8,
+   "oil_pred": 4612.19,
+   "water_pred": 1927.16,
+   "gas_pred": 1237.45
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-05-21 17:45",
+   "oil": 4446.9,
+   "water": 1956.2,
+   "gas": 1210.4,
+   "oil_pred": 4494.01,
+   "water_pred": 2008.07,
+   "gas_pred": 1205.74
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-06-21 12:29",
+   "oil": 4344.9,
+   "water": 2124.3,
+   "gas": 1145.9,
+   "oil_pred": 4370.72,
+   "water_pred": 2011.29,
+   "gas_pred": 1172.66
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-07-22 07:47",
+   "oil": 4250.5,
+   "water": 2044.0,
+   "gas": 1106.2,
+   "oil_pred": 4279.56,
+   "water_pred": 2082.26,
+   "gas_pred": 1148.21
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-08-21 15:54",
+   "oil": 4132.3,
+   "water": 2114.3,
+   "gas": 1077.2,
+   "oil_pred": 4143.72,
+   "water_pred": 2100.59,
+   "gas_pred": 1111.76
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-09-21 05:52",
+   "oil": 3920.5,
+   "water": 2088.3,
+   "gas": 995.3,
+   "oil_pred": 3831.81,
+   "water_pred": 2104.6,
+   "gas_pred": 1028.08
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-01-24 01:57",
+   "oil": 1593.2,
+   "water": 328.0,
+   "gas": 534.1,
+   "oil_pred": 1647.43,
+   "water_pred": 342.47,
+   "gas_pred": 553.87
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-02-21 05:51",
+   "oil": 1559.0,
+   "water": 350.5,
+   "gas": 505.1,
+   "oil_pred": 1549.68,
+   "water_pred": 364.65,
+   "gas_pred": 521.0
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-03-24 03:59",
+   "oil": 1465.4,
+   "water": 355.9,
+   "gas": 483.7,
+   "oil_pred": 1426.24,
+   "water_pred": 352.27,
+   "gas_pred": 479.5
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-04-24 07:57",
+   "oil": 1433.8,
+   "water": 365.5,
+   "gas": 453.3,
+   "oil_pred": 1420.79,
+   "water_pred": 368.44,
+   "gas_pred": 477.67
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-05-24 22:56",
+   "oil": 1472.7,
+   "water": 417.9,
+   "gas": 514.6,
+   "oil_pred": 1478.95,
+   "water_pred": 394.7,
+   "gas_pred": 497.22
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-06-24 21:08",
+   "oil": 1451.9,
+   "water": 382.5,
+   "gas": 468.9,
+   "oil_pred": 1444.97,
+   "water_pred": 417.95,
+   "gas_pred": 485.8
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-07-24 17:48",
+   "oil": 1352.1,
+   "water": 446.2,
+   "gas": 483.5,
+   "oil_pred": 1427.04,
+   "water_pred": 416.16,
+   "gas_pred": 479.77
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-09-24 11:05",
+   "oil": 1479.7,
+   "water": 464.0,
+   "gas": 479.5,
+   "oil_pred": 1370.02,
+   "water_pred": 473.6,
+   "gas_pred": 460.6
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-01-26 14:37",
+   "oil": 1346.4,
+   "water": 295.4,
+   "gas": 219.4,
+   "oil_pred": 1303.22,
+   "water_pred": 302.59,
+   "gas_pred": 208.51
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-02-24 20:12",
+   "oil": 1300.6,
+   "water": 321.7,
+   "gas": 202.0,
+   "oil_pred": 1289.68,
+   "water_pred": 311.8,
+   "gas_pred": 206.35
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-03-27 13:14",
+   "oil": 1249.8,
+   "water": 317.9,
+   "gas": 225.3,
+   "oil_pred": 1295.03,
+   "water_pred": 335.25,
+   "gas_pred": 207.2
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-04-27 08:16",
+   "oil": 1319.0,
+   "water": 385.0,
+   "gas": 223.8,
+   "oil_pred": 1352.24,
+   "water_pred": 362.74,
+   "gas_pred": 216.36
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-05-28 00:28",
+   "oil": 1360.3,
+   "water": 377.2,
+   "gas": 207.5,
+   "oil_pred": 1320.07,
+   "water_pred": 383.24,
+   "gas_pred": 211.21
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-06-27 21:05",
+   "oil": 1204.6,
+   "water": 377.2,
+   "gas": 162.3,
+   "oil_pred": 1258.31,
+   "water_pred": 380.58,
+   "gas_pred": 201.33
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-07-27 23:20",
+   "oil": 1259.6,
+   "water": 381.3,
+   "gas": 203.7,
+   "oil_pred": 1239.0,
+   "water_pred": 397.97,
+   "gas_pred": 198.24
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-08-27 22:56",
+   "oil": 1231.0,
+   "water": 413.0,
+   "gas": 220.1,
+   "oil_pred": 1203.88,
+   "water_pred": 403.76,
+   "gas_pred": 192.62
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-09-27 17:33",
+   "oil": 1070.3,
+   "water": 386.1,
+   "gas": 175.2,
+   "oil_pred": 1099.93,
+   "water_pred": 379.24,
+   "gas_pred": 175.99
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-01-29 04:19",
+   "oil": 2277.9,
+   "water": 645.1,
+   "gas": 485.5,
+   "oil_pred": 2332.07,
+   "water_pred": 678.94,
+   "gas_pred": 536.38
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-02-28 07:27",
+   "oil": 2212.5,
+   "water": 702.4,
+   "gas": 518.9,
+   "oil_pred": 2199.66,
+   "water_pred": 648.42,
+   "gas_pred": 505.92
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-03-30 21:57",
+   "oil": 2097.9,
+   "water": 631.5,
+   "gas": 470.2,
+   "oil_pred": 2104.76,
+   "water_pred": 662.45,
+   "gas_pred": 484.1
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-04-30 19:20",
+   "oil": 2049.6,
+   "water": 668.2,
+   "gas": 446.3,
+   "oil_pred": 1972.94,
+   "water_pred": 645.86,
+   "gas_pred": 453.78
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-06-30 18:46",
+   "oil": 1777.5,
+   "water": 607.2,
+   "gas": 433.0,
+   "oil_pred": 1750.96,
+   "water_pred": 626.69,
+   "gas_pred": 402.72
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-07-31 07:41",
+   "oil": 1676.2,
+   "water": 638.5,
+   "gas": 387.3,
+   "oil_pred": 1679.57,
+   "water_pred": 611.94,
+   "gas_pred": 386.3
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-08-31 06:07",
+   "oil": 1603.1,
+   "water": 609.7,
+   "gas": 369.7,
+   "oil_pred": 1643.72,
+   "water_pred": 633.29,
+   "gas_pred": 378.05
+  }
+ ],
+ "forecast": [
+  {
+   "well": "GL-01",
+   "time": "2025-06-02 20:49",
+   "cutoff": "2025-06-01",
+   "horizon_days": 1,
+   "oil": 1007.6,
+   "water": 723.8,
+   "gas": 252.9,
+   "oil_pred": 987.4,
+   "water_pred": 779.07,
+   "gas_pred": 274.3
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-07-03 13:22",
+   "cutoff": "2025-06-01",
+   "horizon_days": 32,
+   "oil": 900.6,
+   "water": 772.0,
+   "gas": 255.0,
+   "oil_pred": 934.46,
+   "water_pred": 766.31,
+   "gas_pred": 259.59
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-08-02 22:15",
+   "cutoff": "2025-06-01",
+   "horizon_days": 62,
+   "oil": 811.3,
+   "water": 723.4,
+   "gas": 231.7,
+   "oil_pred": 862.56,
+   "water_pred": 740.38,
+   "gas_pred": 239.62
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-06-05 16:33",
+   "cutoff": "2025-06-01",
+   "horizon_days": 4,
+   "oil": 1262.7,
+   "water": 1585.5,
+   "gas": 395.6,
+   "oil_pred": 1261.7,
+   "water_pred": 1580.16,
+   "gas_pred": 380.28
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-07-06 13:24",
+   "cutoff": "2025-06-01",
+   "horizon_days": 35,
+   "oil": 1237.3,
+   "water": 1523.9,
+   "gas": 367.0,
+   "oil_pred": 1225.26,
+   "water_pred": 1616.11,
+   "gas_pred": 369.29
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-08-06 04:47",
+   "cutoff": "2025-06-01",
+   "horizon_days": 66,
+   "oil": 1174.7,
+   "water": 1437.1,
+   "gas": 349.3,
+   "oil_pred": 1209.23,
+   "water_pred": 1654.81,
+   "gas_pred": 364.46
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-06-08 13:09",
+   "cutoff": "2025-06-01",
+   "horizon_days": 7,
+   "oil": 782.0,
+   "water": 382.5,
+   "gas": 184.2,
+   "oil_pred": 707.25,
+   "water_pred": 388.7,
+   "gas_pred": 157.01
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-07-09 13:35",
+   "cutoff": "2025-06-01",
+   "horizon_days": 38,
+   "oil": 762.7,
+   "water": 391.5,
+   "gas": 172.2,
+   "oil_pred": 705.89,
+   "water_pred": 405.01,
+   "gas_pred": 156.71
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-08-09 10:46",
+   "cutoff": "2025-06-01",
+   "horizon_days": 69,
+   "oil": 786.5,
+   "water": 410.4,
+   "gas": 148.4,
+   "oil_pred": 664.34,
+   "water_pred": 405.21,
+   "gas_pred": 147.48
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-06-11 22:22",
+   "cutoff": "2025-06-01",
+   "horizon_days": 10,
+   "oil": 807.9,
+   "water": 374.9,
+   "gas": 224.9,
+   "oil_pred": 792.89,
+   "water_pred": 342.94,
+   "gas_pred": 188.31
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-07-13 03:33",
+   "cutoff": "2025-06-01",
+   "horizon_days": 42,
+   "oil": 800.6,
+   "water": 379.1,
+   "gas": 165.5,
+   "oil_pred": 786.1,
+   "water_pred": 341.14,
+   "gas_pred": 186.7
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-08-12 21:51",
+   "cutoff": "2025-06-01",
+   "horizon_days": 72,
+   "oil": 732.3,
+   "water": 344.2,
+   "gas": 182.0,
+   "oil_pred": 716.82,
+   "water_pred": 312.79,
+   "gas_pred": 170.24
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-07-16 09:18",
+   "cutoff": "2025-06-01",
+   "horizon_days": 45,
+   "oil": 702.2,
+   "water": 430.2,
+   "gas": 224.2,
+   "oil_pred": 746.74,
+   "water_pred": 428.44,
+   "gas_pred": 243.21
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-08-15 21:55",
+   "cutoff": "2025-06-01",
+   "horizon_days": 75,
+   "oil": 697.2,
+   "water": 452.8,
+   "gas": 252.8,
+   "oil_pred": 743.18,
+   "water_pred": 444.83,
+   "gas_pred": 242.05
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-06-18 06:13",
+   "cutoff": "2025-06-01",
+   "horizon_days": 17,
+   "oil": 713.5,
+   "water": 500.4,
+   "gas": 147.9,
+   "oil_pred": 730.63,
+   "water_pred": 501.58,
+   "gas_pred": 158.55
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-07-19 14:40",
+   "cutoff": "2025-06-01",
+   "horizon_days": 48,
+   "oil": 712.8,
+   "water": 506.5,
+   "gas": 124.6,
+   "oil_pred": 725.71,
+   "water_pred": 504.51,
+   "gas_pred": 157.48
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-08-18 11:20",
+   "cutoff": "2025-06-01",
+   "horizon_days": 78,
+   "oil": 744.1,
+   "water": 572.2,
+   "gas": 135.1,
+   "oil_pred": 773.51,
+   "water_pred": 536.13,
+   "gas_pred": 167.85
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-06-21 12:29",
+   "cutoff": "2025-06-01",
+   "horizon_days": 20,
+   "oil": 4344.9,
+   "water": 2124.3,
+   "gas": 1145.9,
+   "oil_pred": 4376.78,
+   "water_pred": 1999.39,
+   "gas_pred": 1174.29
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-07-22 07:47",
+   "cutoff": "2025-06-01",
+   "horizon_days": 51,
+   "oil": 4250.5,
+   "water": 2044.0,
+   "gas": 1106.2,
+   "oil_pred": 4274.2,
+   "water_pred": 2038.61,
+   "gas_pred": 1146.77
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-08-21 15:54",
+   "cutoff": "2025-06-01",
+   "horizon_days": 81,
+   "oil": 4132.3,
+   "water": 2114.3,
+   "gas": 1077.2,
+   "oil_pred": 4112.78,
+   "water_pred": 2057.95,
+   "gas_pred": 1103.46
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-06-24 21:08",
+   "cutoff": "2025-06-01",
+   "horizon_days": 23,
+   "oil": 1451.9,
+   "water": 382.5,
+   "gas": 468.9,
+   "oil_pred": 1453.54,
+   "water_pred": 434.45,
+   "gas_pred": 488.68
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-07-24 17:48",
+   "cutoff": "2025-06-01",
+   "horizon_days": 53,
+   "oil": 1352.1,
+   "water": 446.2,
+   "gas": 483.5,
+   "oil_pred": 1406.17,
+   "water_pred": 452.12,
+   "gas_pred": 472.76
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-06-27 21:05",
+   "cutoff": "2025-06-01",
+   "horizon_days": 26,
+   "oil": 1204.6,
+   "water": 377.2,
+   "gas": 162.3,
+   "oil_pred": 1211.1,
+   "water_pred": 372.72,
+   "gas_pred": 193.78
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-07-27 23:20",
+   "cutoff": "2025-06-01",
+   "horizon_days": 56,
+   "oil": 1259.6,
+   "water": 381.3,
+   "gas": 203.7,
+   "oil_pred": 1203.04,
+   "water_pred": 388.12,
+   "gas_pred": 192.49
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-08-27 22:56",
+   "cutoff": "2025-06-01",
+   "horizon_days": 87,
+   "oil": 1231.0,
+   "water": 413.0,
+   "gas": 220.1,
+   "oil_pred": 1163.56,
+   "water_pred": 399.01,
+   "gas_pred": 186.17
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-06-30 18:46",
+   "cutoff": "2025-06-01",
+   "horizon_days": 29,
+   "oil": 1777.5,
+   "water": 607.2,
+   "gas": 433.0,
+   "oil_pred": 1886.48,
+   "water_pred": 655.7,
+   "gas_pred": 433.89
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-07-31 07:41",
+   "cutoff": "2025-06-01",
+   "horizon_days": 60,
+   "oil": 1676.2,
+   "water": 638.5,
+   "gas": 387.3,
+   "oil_pred": 1856.75,
+   "water_pred": 666.99,
+   "gas_pred": 427.05
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-08-31 06:07",
+   "cutoff": "2025-06-01",
+   "horizon_days": 91,
+   "oil": 1603.1,
+   "water": 609.7,
+   "gas": 369.7,
+   "oil_pred": 1855.76,
+   "water_pred": 682.17,
+   "gas_pred": 426.82
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-07-03 13:22",
+   "cutoff": "2025-07-01",
+   "horizon_days": 2,
+   "oil": 900.6,
+   "water": 772.0,
+   "gas": 255.0,
+   "oil_pred": 957.03,
+   "water_pred": 729.16,
+   "gas_pred": 265.86
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-08-02 22:15",
+   "cutoff": "2025-07-01",
+   "horizon_days": 32,
+   "oil": 811.3,
+   "water": 723.4,
+   "gas": 231.7,
+   "oil_pred": 899.74,
+   "water_pred": 704.77,
+   "gas_pred": 249.95
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-09-03 04:33",
+   "cutoff": "2025-07-01",
+   "horizon_days": 64,
+   "oil": 791.2,
+   "water": 711.7,
+   "gas": 201.7,
+   "oil_pred": 872.83,
+   "water_pred": 691.94,
+   "gas_pred": 242.47
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-07-06 13:24",
+   "cutoff": "2025-07-01",
+   "horizon_days": 5,
+   "oil": 1237.3,
+   "water": 1523.9,
+   "gas": 367.0,
+   "oil_pred": 1226.16,
+   "water_pred": 1625.89,
+   "gas_pred": 369.57
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-08-06 04:47",
+   "cutoff": "2025-07-01",
+   "horizon_days": 36,
+   "oil": 1174.7,
+   "water": 1437.1,
+   "gas": 349.3,
+   "oil_pred": 1210.4,
+   "water_pred": 1664.25,
+   "gas_pred": 364.82
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-09-06 05:05",
+   "cutoff": "2025-07-01",
+   "horizon_days": 67,
+   "oil": 1149.1,
+   "water": 1569.2,
+   "gas": 346.4,
+   "oil_pred": 1218.28,
+   "water_pred": 1733.29,
+   "gas_pred": 367.19
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-07-09 13:35",
+   "cutoff": "2025-07-01",
+   "horizon_days": 8,
+   "oil": 762.7,
+   "water": 391.5,
+   "gas": 172.2,
+   "oil_pred": 770.77,
+   "water_pred": 402.37,
+   "gas_pred": 171.11
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-08-09 10:46",
+   "cutoff": "2025-07-01",
+   "horizon_days": 39,
+   "oil": 786.5,
+   "water": 410.4,
+   "gas": 148.4,
+   "oil_pred": 760.5,
+   "water_pred": 407.72,
+   "gas_pred": 168.83
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-09-09 00:16",
+   "cutoff": "2025-07-01",
+   "horizon_days": 70,
+   "oil": 733.8,
+   "water": 417.3,
+   "gas": 167.2,
+   "oil_pred": 775.1,
+   "water_pred": 430.43,
+   "gas_pred": 172.07
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-07-13 03:33",
+   "cutoff": "2025-07-01",
+   "horizon_days": 12,
+   "oil": 800.6,
+   "water": 379.1,
+   "gas": 165.5,
+   "oil_pred": 798.86,
+   "water_pred": 366.87,
+   "gas_pred": 189.73
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-08-12 21:51",
+   "cutoff": "2025-07-01",
+   "horizon_days": 42,
+   "oil": 732.3,
+   "water": 344.2,
+   "gas": 182.0,
+   "oil_pred": 733.75,
+   "water_pred": 339.84,
+   "gas_pred": 174.27
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-09-11 21:25",
+   "cutoff": "2025-07-01",
+   "horizon_days": 72,
+   "oil": 578.2,
+   "water": 307.6,
+   "gas": 142.7,
+   "oil_pred": 591.12,
+   "water_pred": 274.93,
+   "gas_pred": 140.39
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-07-16 09:18",
+   "cutoff": "2025-07-01",
+   "horizon_days": 15,
+   "oil": 702.2,
+   "water": 430.2,
+   "gas": 224.2,
+   "oil_pred": 746.74,
+   "water_pred": 431.18,
+   "gas_pred": 243.21
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-08-15 21:55",
+   "cutoff": "2025-07-01",
+   "horizon_days": 45,
+   "oil": 697.2,
+   "water": 452.8,
+   "gas": 252.8,
+   "oil_pred": 743.18,
+   "water_pred": 440.57,
+   "gas_pred": 242.05
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-09-14 19:50",
+   "cutoff": "2025-07-01",
+   "horizon_days": 75,
+   "oil": 733.3,
+   "water": 413.9,
+   "gas": 200.1,
+   "oil_pred": 740.82,
+   "water_pred": 453.33,
+   "gas_pred": 241.28
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-07-19 14:40",
+   "cutoff": "2025-07-01",
+   "horizon_days": 18,
+   "oil": 712.8,
+   "water": 506.5,
+   "gas": 124.6,
+   "oil_pred": 712.84,
+   "water_pred": 507.63,
+   "gas_pred": 154.69
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-08-18 11:20",
+   "cutoff": "2025-07-01",
+   "horizon_days": 48,
+   "oil": 744.1,
+   "water": 572.2,
+   "gas": 135.1,
+   "oil_pred": 758.68,
+   "water_pred": 540.19,
+   "gas_pred": 164.63
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-09-18 00:40",
+   "cutoff": "2025-07-01",
+   "horizon_days": 79,
+   "oil": 695.1,
+   "water": 556.5,
+   "gas": 157.4,
+   "oil_pred": 746.08,
+   "water_pred": 544.26,
+   "gas_pred": 161.9
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-07-22 07:47",
+   "cutoff": "2025-07-01",
+   "horizon_days": 21,
+   "oil": 4250.5,
+   "water": 2044.0,
+   "gas": 1106.2,
+   "oil_pred": 4254.89,
+   "water_pred": 2138.91,
+   "gas_pred": 1141.59
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-08-21 15:54",
+   "cutoff": "2025-07-01",
+   "horizon_days": 51,
+   "oil": 4132.3,
+   "water": 2114.3,
+   "gas": 1077.2,
+   "oil_pred": 4098.02,
+   "water_pred": 2185.51,
+   "gas_pred": 1099.5
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-09-21 05:52",
+   "cutoff": "2025-07-01",
+   "horizon_days": 82,
+   "oil": 3920.5,
+   "water": 2088.3,
+   "gas": 995.3,
+   "oil_pred": 3792.47,
+   "water_pred": 2187.8,
+   "gas_pred": 1017.52
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-07-24 17:48",
+   "cutoff": "2025-07-01",
+   "horizon_days": 23,
+   "oil": 1352.1,
+   "water": 446.2,
+   "gas": 483.5,
+   "oil_pred": 1408.18,
+   "water_pred": 410.74,
+   "gas_pred": 473.43
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-09-24 11:05",
+   "cutoff": "2025-07-01",
+   "horizon_days": 85,
+   "oil": 1479.7,
+   "water": 464.0,
+   "gas": 479.5,
+   "oil_pred": 1431.77,
+   "water_pred": 450.01,
+   "gas_pred": 481.36
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-07-27 23:20",
+   "cutoff": "2025-07-01",
+   "horizon_days": 26,
+   "oil": 1259.6,
+   "water": 381.3,
+   "gas": 203.7,
+   "oil_pred": 1195.44,
+   "water_pred": 393.02,
+   "gas_pred": 191.27
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-08-27 22:56",
+   "cutoff": "2025-07-01",
+   "horizon_days": 57,
+   "oil": 1231.0,
+   "water": 413.0,
+   "gas": 220.1,
+   "oil_pred": 1145.52,
+   "water_pred": 403.12,
+   "gas_pred": 183.28
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-09-27 17:33",
+   "cutoff": "2025-07-01",
+   "horizon_days": 88,
+   "oil": 1070.3,
+   "water": 386.1,
+   "gas": 175.2,
+   "oil_pred": 965.17,
+   "water_pred": 368.17,
+   "gas_pred": 154.43
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-07-31 07:41",
+   "cutoff": "2025-07-01",
+   "horizon_days": 30,
+   "oil": 1676.2,
+   "water": 638.5,
+   "gas": 387.3,
+   "oil_pred": 1729.43,
+   "water_pred": 615.54,
+   "gas_pred": 397.77
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-08-31 06:07",
+   "cutoff": "2025-07-01",
+   "horizon_days": 61,
+   "oil": 1603.1,
+   "water": 609.7,
+   "gas": 369.7,
+   "oil_pred": 1684.73,
+   "water_pred": 618.1,
+   "gas_pred": 387.49
+  }
+ ],
+ "per_well": [
+  {
+   "well": "GL-01",
+   "n_tests": 9,
+   "oil": {
+    "R2": 0.943,
+    "MAPE": 2.7349,
+    "WAPE": 2.7756
+   },
+   "water": {
+    "R2": 0.5545,
+    "MAPE": 3.3181,
+    "WAPE": 3.3619
+   },
+   "gas": {
+    "R2": 0.898,
+    "MAPE": 4.2415,
+    "WAPE": 4.08
+   }
+  },
+  {
+   "well": "GL-02",
+   "n_tests": 8,
+   "oil": {
+    "R2": 0.941,
+    "MAPE": 1.3749,
+    "WAPE": 1.3342
+   },
+   "water": {
+    "R2": -0.0971,
+    "MAPE": 3.5052,
+    "WAPE": 3.4927
+   },
+   "gas": {
+    "R2": 0.8646,
+    "MAPE": 2.819,
+    "WAPE": 2.8209
+   }
+  },
+  {
+   "well": "GL-03",
+   "n_tests": 9,
+   "oil": {
+    "R2": -0.7091,
+    "MAPE": 3.4891,
+    "WAPE": 3.4845
+   },
+   "water": {
+    "R2": 0.7504,
+    "MAPE": 2.7783,
+    "WAPE": 2.7005
+   },
+   "gas": {
+    "R2": -0.0775,
+    "MAPE": 5.3323,
+    "WAPE": 5.3058
+   }
+  },
+  {
+   "well": "GL-04",
+   "n_tests": 9,
+   "oil": {
+    "R2": 0.9577,
+    "MAPE": 1.548,
+    "WAPE": 1.5825
+   },
+   "water": {
+    "R2": 0.5678,
+    "MAPE": 3.7267,
+    "WAPE": 3.6994
+   },
+   "gas": {
+    "R2": 0.3772,
+    "MAPE": 8.7688,
+    "WAPE": 9.1822
+   }
+  },
+  {
+   "well": "GL-05",
+   "n_tests": 8,
+   "oil": {
+    "R2": 0.812,
+    "MAPE": 3.3116,
+    "WAPE": 3.2756
+   },
+   "water": {
+    "R2": -1.0708,
+    "MAPE": 5.3045,
+    "WAPE": 5.302
+   },
+   "gas": {
+    "R2": -0.2739,
+    "MAPE": 7.851,
+    "WAPE": 7.7024
+   }
+  },
+  {
+   "well": "GL-06",
+   "n_tests": 9,
+   "oil": {
+    "R2": 0.7744,
+    "MAPE": 3.0733,
+    "WAPE": 3.1687
+   },
+   "water": {
+    "R2": 0.8649,
+    "MAPE": 2.5266,
+    "WAPE": 2.5924
+   },
+   "gas": {
+    "R2": 0.6233,
+    "MAPE": 8.6495,
+    "WAPE": 8.2154
+   }
+  },
+  {
+   "well": "GL-07",
+   "n_tests": 9,
+   "oil": {
+    "R2": 0.9491,
+    "MAPE": 1.2562,
+    "WAPE": 1.2625
+   },
+   "water": {
+    "R2": 0.8912,
+    "MAPE": 1.7188,
+    "WAPE": 1.7424
+   },
+   "gas": {
+    "R2": 0.7384,
+    "MAPE": 3.0225,
+    "WAPE": 2.9814
+   }
+  },
+  {
+   "well": "GL-08",
+   "n_tests": 8,
+   "oil": {
+    "R2": 0.4161,
+    "MAPE": 2.6798,
+    "WAPE": 2.6552
+   },
+   "water": {
+    "R2": 0.8063,
+    "MAPE": 4.2363,
+    "WAPE": 4.2909
+   },
+   "gas": {
+    "R2": 0.535,
+    "MAPE": 3.0984,
+    "WAPE": 3.0883
+   }
+  },
+  {
+   "well": "GL-09",
+   "n_tests": 9,
+   "oil": {
+    "R2": 0.8137,
+    "MAPE": 2.6898,
+    "WAPE": 2.6791
+   },
+   "water": {
+    "R2": 0.8881,
+    "MAPE": 3.0701,
+    "WAPE": 3.038
+   },
+   "gas": {
+    "R2": 0.2758,
+    "MAPE": 6.6581,
+    "WAPE": 6.3741
+   }
+  },
+  {
+   "well": "GL-10",
+   "n_tests": 7,
+   "oil": {
+    "R2": 0.9737,
+    "MAPE": 1.6076,
+    "WAPE": 1.6142
+   },
+   "water": {
+    "R2": -0.0666,
+    "MAPE": 4.6305,
+    "WAPE": 4.6806
+   },
+   "gas": {
+    "R2": 0.7634,
+    "MAPE": 3.8744,
+    "WAPE": 4.0136
+   }
+  }
+ ],
+ "horizon": [
+  {
+   "bucket": "0-30 days",
+   "n": 18,
+   "oil": {
+    "R2": 0.9984,
+    "MAPE": 2.642,
+    "WAPE": 2.0674
+   },
+   "water": {
+    "R2": 0.9922,
+    "MAPE": 4.5194,
+    "WAPE": 4.6071
+   },
+   "gas": {
+    "R2": 0.9944,
+    "MAPE": 7.8389,
+    "WAPE": 5.1771
+   }
+  },
+  {
+   "bucket": "30-60 days",
+   "n": 18,
+   "oil": {
+    "R2": 0.9981,
+    "MAPE": 3.7857,
+    "WAPE": 2.8966
+   },
+   "water": {
+    "R2": 0.988,
+    "MAPE": 3.4661,
+    "WAPE": 4.0941
+   },
+   "gas": {
+    "R2": 0.9944,
+    "MAPE": 8.2467,
+    "WAPE": 5.419
+   }
+  },
+  {
+   "bucket": "60-92 days",
+   "n": 20,
+   "oil": {
+    "R2": 0.9906,
+    "MAPE": 6.1957,
+    "WAPE": 5.4863
+   },
+   "water": {
+    "R2": 0.9834,
+    "MAPE": 5.5441,
+    "WAPE": 5.9566
+   },
+   "gas": {
+    "R2": 0.9897,
+    "MAPE": 8.0188,
+    "WAPE": 6.2741
+   }
+  }
+ ],
+ "band": {
+  "oil": {
+   "p10": 0.9381,
+   "p90": 1.0558
+  },
+  "water": {
+   "p10": 0.9195,
+   "p90": 1.0649
+  },
+  "gas": {
+   "p10": 0.8347,
+   "p90": 1.084
+  }
+ },
+ "significance": [
+  {
+   "comparison": "Final vs repeat last test",
+   "scheme": "forecast",
+   "fluid": "oil",
+   "final_better_on": 47,
+   "n": 56,
+   "p_value": 0.0,
+   "mean_error_final_pct": 4.28,
+   "mean_error_other_pct": 9.17
+  },
+  {
+   "comparison": "Final vs repeat last test",
+   "scheme": "forecast",
+   "fluid": "water",
+   "final_better_on": 30,
+   "n": 56,
+   "p_value": 0.2061,
+   "mean_error_final_pct": 4.55,
+   "mean_error_other_pct": 5.94
+  },
+  {
+   "comparison": "Final vs repeat last test",
+   "scheme": "forecast",
+   "fluid": "gas",
+   "final_better_on": 39,
+   "n": 56,
+   "p_value": 0.0011,
+   "mean_error_final_pct": 8.03,
+   "mean_error_other_pct": 11.96
+  },
+  {
+   "comparison": "Final vs physics without GP / local trend",
+   "scheme": "forecast",
+   "fluid": "oil",
+   "final_better_on": 44,
+   "n": 56,
+   "p_value": 0.0001,
+   "mean_error_final_pct": 4.28,
+   "mean_error_other_pct": 5.1
+  },
+  {
+   "comparison": "Final vs physics without GP / local trend",
+   "scheme": "forecast",
+   "fluid": "water",
+   "final_better_on": 36,
+   "n": 56,
+   "p_value": 0.0068,
+   "mean_error_final_pct": 4.55,
+   "mean_error_other_pct": 5.45
+  },
+  {
+   "comparison": "Final vs physics without GP / local trend",
+   "scheme": "forecast",
+   "fluid": "gas",
+   "final_better_on": 30,
+   "n": 56,
+   "p_value": 0.3609,
+   "mean_error_final_pct": 8.03,
+   "mean_error_other_pct": 8.24
+  },
+  {
+   "comparison": "Final vs physics without GP / local trend",
+   "scheme": "between tests",
+   "fluid": "oil",
+   "final_better_on": 54,
+   "n": 85,
+   "p_value": 0.0654,
+   "mean_error_final_pct": 2.39,
+   "mean_error_other_pct": 2.44
+  },
+  {
+   "comparison": "Final vs physics without GP / local trend",
+   "scheme": "between tests",
+   "fluid": "water",
+   "final_better_on": 50,
+   "n": 85,
+   "p_value": 0.0289,
+   "mean_error_final_pct": 3.42,
+   "mean_error_other_pct": 3.83
+  },
+  {
+   "comparison": "Final vs physics without GP / local trend",
+   "scheme": "between tests",
+   "fluid": "gas",
+   "final_better_on": 45,
+   "n": 85,
+   "p_value": 0.619,
+   "mean_error_final_pct": 5.5,
+   "mean_error_other_pct": 5.77
+  }
+ ],
+ "steps": [
+  {
+   "step": "Repeat last test (naive)",
+   "oil_between": 3.141,
+   "water_between": 4.0256,
+   "gas_between": 5.6132,
+   "oil_forecast": 8.1577,
+   "water_forecast": 5.3157,
+   "gas_forecast": 10.223
+  },
+  {
+   "step": "Physics: J x drawdown, trends",
+   "oil_between": 2.0844,
+   "water_between": 3.3882,
+   "gas_between": 4.3306,
+   "oil_forecast": 4.1177,
+   "water_forecast": 5.5259,
+   "gas_forecast": 5.385
+  },
+  {
+   "step": "+ recent tests weighted",
+   "oil_between": 2.1606,
+   "water_between": 3.502,
+   "gas_between": 4.3244,
+   "oil_forecast": 3.693,
+   "water_forecast": 5.7105,
+   "gas_forecast": 4.9488
+  },
+  {
+   "step": "+ gas = oil x Rs",
+   "oil_between": 2.1606,
+   "water_between": 3.502,
+   "gas_between": 4.3999,
+   "oil_forecast": 3.693,
+   "water_forecast": 5.7105,
+   "gas_forecast": 5.9965
+  },
+  {
+   "step": "+ local reservoir-pressure trend",
+   "oil_between": 2.0291,
+   "water_between": 3.3837,
+   "gas_between": 4.3279,
+   "oil_forecast": 3.5208,
+   "water_forecast": 5.5534,
+   "gas_forecast": 5.6304
+  },
+  {
+   "step": "+ Gaussian process for water (final)",
+   "oil_between": 2.0291,
+   "water_between": 3.0815,
+   "gas_between": 4.3279,
+   "oil_forecast": 3.5208,
+   "water_forecast": 4.9175,
+   "gas_forecast": 5.6304
+  }
+ ],
+ "models": [
+  {
+   "experiment": "C3 eng-targets Ridge + label feats OOF",
+   "family": "C3",
+   "between_WAPE": 3.22,
+   "forecast_WAPE": 4.41,
+   "bias_oil_pct": -3.4,
+   "bias_water_pct": -16.7
+  },
+  {
+   "experiment": "F2 rec120 + GP-safe water (selected)",
+   "family": "F2",
+   "between_WAPE": 3.12,
+   "forecast_WAPE": 4.49,
+   "bias_oil_pct": 0.0,
+   "bias_water_pct": 0.8
+  },
+  {
+   "experiment": "F1 rec120 + GP-all oil&water",
+   "family": "F1",
+   "between_WAPE": 3.07,
+   "forecast_WAPE": 4.54,
+   "bias_oil_pct": 5.2,
+   "bias_water_pct": 1.9
+  },
+  {
+   "experiment": "rec120 + GP-safe oil&water",
+   "family": "rec120",
+   "between_WAPE": 3.06,
+   "forecast_WAPE": 4.58,
+   "bias_oil_pct": 0.4,
+   "bias_water_pct": 0.8
+  },
+  {
+   "experiment": "E3 physics + GP-all oil&water",
+   "family": "E3",
+   "between_WAPE": 3.07,
+   "forecast_WAPE": 4.65,
+   "bias_oil_pct": 5.3,
+   "bias_water_pct": 2.1
+  },
+  {
+   "experiment": "B physics rec60",
+   "family": "B",
+   "between_WAPE": 3.57,
+   "forecast_WAPE": 4.69,
+   "bias_oil_pct": 0.0,
+   "bias_water_pct": 0.0
+  },
+  {
+   "experiment": "B physics rec120",
+   "family": "B",
+   "between_WAPE": 3.27,
+   "forecast_WAPE": 4.74,
+   "bias_oil_pct": 0.0,
+   "bias_water_pct": 0.0
+  },
+  {
+   "experiment": "B physics rec120 + WC tubing",
+   "family": "B",
+   "between_WAPE": 3.29,
+   "forecast_WAPE": 4.77,
+   "bias_oil_pct": 0.0,
+   "bias_water_pct": -0.1
+  },
+  {
+   "experiment": "E2 physics + GP-all water",
+   "family": "E2",
+   "between_WAPE": 3.06,
+   "forecast_WAPE": 4.82,
+   "bias_oil_pct": 0.0,
+   "bias_water_pct": 2.1
+  },
+  {
+   "experiment": "D ExtraTrees synthetic_only",
+   "family": "D",
+   "between_WAPE": 4.22,
+   "forecast_WAPE": 4.87,
+   "bias_oil_pct": 0.2,
+   "bias_water_pct": -0.0
+  },
+  {
+   "experiment": "C1 residual Ridge OOF",
+   "family": "C1",
+   "between_WAPE": 3.24,
+   "forecast_WAPE": 4.9,
+   "bias_oil_pct": 0.0,
+   "bias_water_pct": 0.0
+  },
+  {
+   "experiment": "B physics",
+   "family": "B",
+   "between_WAPE": 3.24,
+   "forecast_WAPE": 4.94,
+   "bias_oil_pct": 0.0,
+   "bias_water_pct": -0.0
+  },
+  {
+   "experiment": "B physics GOR median",
+   "family": "B",
+   "between_WAPE": 3.26,
+   "forecast_WAPE": 4.99,
+   "bias_oil_pct": 0.0,
+   "bias_water_pct": -0.0
+  },
+  {
+   "experiment": "B physics shrink0.3",
+   "family": "B",
+   "between_WAPE": 3.64,
+   "forecast_WAPE": 5.07,
+   "bias_oil_pct": -0.0,
+   "bias_water_pct": -0.0
+  },
+  {
+   "experiment": "C2 physics-feature GP OOF",
+   "family": "C2",
+   "between_WAPE": 3.26,
+   "forecast_WAPE": 5.15,
+   "bias_oil_pct": 10.2,
+   "bias_water_pct": 3.4
+  },
+  {
+   "experiment": "C2 physics-feature Ridge OOF",
+   "family": "C2",
+   "between_WAPE": 3.42,
+   "forecast_WAPE": 5.21,
+   "bias_oil_pct": 3.4,
+   "bias_water_pct": -15.8
+  },
+  {
+   "experiment": "A GaussianProcess physics feats",
+   "family": "A",
+   "between_WAPE": 3.3,
+   "forecast_WAPE": 5.22,
+   "bias_oil_pct": 10.4,
+   "bias_water_pct": 3.7
+  },
+  {
+   "experiment": "D LightGBM mixed",
+   "family": "D",
+   "between_WAPE": 4.26,
+   "forecast_WAPE": 5.3,
+   "bias_oil_pct": 0.4,
+   "bias_water_pct": 0.8
+  },
+  {
+   "experiment": "C1 residual LightGBM OOF",
+   "family": "C1",
+   "between_WAPE": 4.3,
+   "forecast_WAPE": 5.38,
+   "bias_oil_pct": 0.3,
+   "bias_water_pct": 0.7
+  },
+  {
+   "experiment": "D CatBoost mixed",
+   "family": "D",
+   "between_WAPE": 3.95,
+   "forecast_WAPE": 5.41,
+   "bias_oil_pct": 1.0,
+   "bias_water_pct": 0.9
+  },
+  {
+   "experiment": "D CatBoost finetune",
+   "family": "D",
+   "between_WAPE": 3.78,
+   "forecast_WAPE": 5.44,
+   "bias_oil_pct": 2.8,
+   "bias_water_pct": 2.6
+  },
+  {
+   "experiment": "A GaussianProcess raw feats",
+   "family": "A",
+   "between_WAPE": 3.48,
+   "forecast_WAPE": 5.81,
+   "bias_oil_pct": 18.9,
+   "bias_water_pct": 13.8
+  },
+  {
+   "experiment": "A GaussianProcess separator-safe feats",
+   "family": "A",
+   "between_WAPE": 3.6,
+   "forecast_WAPE": 6.1,
+   "bias_oil_pct": 0.8,
+   "bias_water_pct": 1.6
+  },
+  {
+   "experiment": "D XGBoost finetune",
+   "family": "D",
+   "between_WAPE": 4.23,
+   "forecast_WAPE": 6.37,
+   "bias_oil_pct": 3.9,
+   "bias_water_pct": -0.4
+  },
+  {
+   "experiment": "A Ridge physics feats",
+   "family": "A",
+   "between_WAPE": 3.77,
+   "forecast_WAPE": 6.38,
+   "bias_oil_pct": 12.2,
+   "bias_water_pct": -3.9
+  },
+  {
+   "experiment": "C3 eng-targets LightGBM + label feats OOF",
+   "family": "C3",
+   "between_WAPE": 5.04,
+   "forecast_WAPE": 7.11,
+   "bias_oil_pct": 9.8,
+   "bias_water_pct": 8.7
+  },
+  {
+   "experiment": "D MLP finetune",
+   "family": "D",
+   "between_WAPE": 4.18,
+   "forecast_WAPE": 7.83,
+   "bias_oil_pct": 1.9,
+   "bias_water_pct": -2.6
+  },
+  {
+   "experiment": "A Ridge raw feats",
+   "family": "A",
+   "between_WAPE": 5.44,
+   "forecast_WAPE": 7.87,
+   "bias_oil_pct": 58.7,
+   "bias_water_pct": 23.7
+  },
+  {
+   "experiment": "A CatBoost physics feats",
+   "family": "A",
+   "between_WAPE": 4.96,
+   "forecast_WAPE": 7.88,
+   "bias_oil_pct": 20.5,
+   "bias_water_pct": 1.1
+  },
+  {
+   "experiment": "0 naive last test value",
+   "family": "0",
+   "between_WAPE": 4.26,
+   "forecast_WAPE": 7.9,
+   "bias_oil_pct": 2.5,
+   "bias_water_pct": 2.6
+  },
+  {
+   "experiment": "C3 eng-targets LightGBM",
+   "family": "C3",
+   "between_WAPE": 5.29,
+   "forecast_WAPE": 8.31,
+   "bias_oil_pct": 21.5,
+   "bias_water_pct": 11.0
+  },
+  {
+   "experiment": "C2 physics-feature LightGBM OOF",
+   "family": "C2",
+   "between_WAPE": 5.94,
+   "forecast_WAPE": 8.73,
+   "bias_oil_pct": 17.8,
+   "bias_water_pct": 2.7
+  },
+  {
+   "experiment": "A kNN physics feats",
+   "family": "A",
+   "between_WAPE": 4.48,
+   "forecast_WAPE": 8.96,
+   "bias_oil_pct": 4.0,
+   "bias_water_pct": 3.1
+  },
+  {
+   "experiment": "A kNN raw feats",
+   "family": "A",
+   "between_WAPE": 4.36,
+   "forecast_WAPE": 9.02,
+   "bias_oil_pct": 4.8,
+   "bias_water_pct": 2.8
+  },
+  {
+   "experiment": "A CatBoost raw feats",
+   "family": "A",
+   "between_WAPE": 5.66,
+   "forecast_WAPE": 9.23,
+   "bias_oil_pct": 50.0,
+   "bias_water_pct": 5.1
+  },
+  {
+   "experiment": "A ExtraTrees physics feats",
+   "family": "A",
+   "between_WAPE": 4.78,
+   "forecast_WAPE": 9.24,
+   "bias_oil_pct": 8.5,
+   "bias_water_pct": 2.2
+  },
+  {
+   "experiment": "A ExtraTrees raw feats",
+   "family": "A",
+   "between_WAPE": 4.66,
+   "forecast_WAPE": 9.37,
+   "bias_oil_pct": 12.7,
+   "bias_water_pct": 2.4
+  },
+  {
+   "experiment": "A LightGBM physics feats",
+   "family": "A",
+   "between_WAPE": 6.68,
+   "forecast_WAPE": 9.5,
+   "bias_oil_pct": 29.6,
+   "bias_water_pct": 2.0
+  },
+  {
+   "experiment": "A RandomForest physics feats",
+   "family": "A",
+   "between_WAPE": 6.48,
+   "forecast_WAPE": 9.71,
+   "bias_oil_pct": 12.3,
+   "bias_water_pct": 2.4
+  },
+  {
+   "experiment": "0 naive well mean",
+   "family": "0",
+   "between_WAPE": 7.62,
+   "forecast_WAPE": 11.63,
+   "bias_oil_pct": 2.6,
+   "bias_water_pct": 2.2
+  },
+  {
+   "experiment": "A LightGBM raw feats",
+   "family": "A",
+   "between_WAPE": 6.29,
+   "forecast_WAPE": 11.7,
+   "bias_oil_pct": 45.9,
+   "bias_water_pct": 3.7
+  },
+  {
+   "experiment": "A RandomForest raw feats",
+   "family": "A",
+   "between_WAPE": 6.78,
+   "forecast_WAPE": 12.2,
+   "bias_oil_pct": 18.6,
+   "bias_water_pct": 3.5
+  },
+  {
+   "experiment": "A SVR physics feats",
+   "family": "A",
+   "between_WAPE": 4.4,
+   "forecast_WAPE": 13.17,
+   "bias_oil_pct": 29.2,
+   "bias_water_pct": 14.8
+  },
+  {
+   "experiment": "A XGBoost physics feats",
+   "family": "A",
+   "between_WAPE": 6.8,
+   "forecast_WAPE": 13.51,
+   "bias_oil_pct": 48.6,
+   "bias_water_pct": 3.5
+  },
+  {
+   "experiment": "A MLP physics feats",
+   "family": "A",
+   "between_WAPE": 4.88,
+   "forecast_WAPE": 15.37,
+   "bias_oil_pct": 16.3,
+   "bias_water_pct": 2.9
+  },
+  {
+   "experiment": "A SVR raw feats",
+   "family": "A",
+   "between_WAPE": 4.38,
+   "forecast_WAPE": 15.64,
+   "bias_oil_pct": 44.8,
+   "bias_water_pct": 22.2
+  },
+  {
+   "experiment": "A XGBoost raw feats",
+   "family": "A",
+   "between_WAPE": 7.14,
+   "forecast_WAPE": 17.86,
+   "bias_oil_pct": 54.2,
+   "bias_water_pct": 5.6
+  }
+ ],
+ "separator": [
+  {
+   "well": "GL-01",
+   "flowline": -26.6,
+   "wellhead": -13.6,
+   "downhole": -9.0
+  },
+  {
+   "well": "GL-02",
+   "flowline": -28.0,
+   "wellhead": -18.4,
+   "downhole": -14.4
+  },
+  {
+   "well": "GL-03",
+   "flowline": -28.0,
+   "wellhead": -15.0,
+   "downhole": -17.9
+  },
+  {
+   "well": "GL-04",
+   "flowline": -28.7,
+   "wellhead": -13.3,
+   "downhole": -18.1
+  },
+  {
+   "well": "GL-05",
+   "flowline": -28.3,
+   "wellhead": -20.1,
+   "downhole": -30.9
+  },
+  {
+   "well": "GL-06",
+   "flowline": -19.1,
+   "wellhead": -0.6,
+   "downhole": -0.6
+  },
+  {
+   "well": "GL-07",
+   "flowline": -17.5,
+   "wellhead": -10.8,
+   "downhole": -6.7
+  },
+  {
+   "well": "GL-08",
+   "flowline": -18.3,
+   "wellhead": -9.8,
+   "downhole": -8.6
+  },
+  {
+   "well": "GL-09",
+   "flowline": -18.8,
+   "wellhead": -4.0,
+   "downhole": -3.3
+  },
+  {
+   "well": "GL-10",
+   "flowline": -19.0,
+   "wellhead": -9.3,
+   "downhole": -4.9
+  }
+ ],
+ "gor": [
+  {
+   "well": "GL-01",
+   "time": "2025-01-03",
+   "gor": 290.3,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-01-31",
+   "gor": 269.3,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-03-03",
+   "gor": 277.1,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-04-02",
+   "gor": 293.2,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-05-03",
+   "gor": 253.2,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-06-02",
+   "gor": 251.0,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-07-03",
+   "gor": 283.2,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-08-02",
+   "gor": 285.5,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-01",
+   "time": "2025-09-02",
+   "gor": 254.9,
+   "rs": 277.8
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-01-06",
+   "gor": 312.6,
+   "rs": 301.4
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-02-03",
+   "gor": 293.4,
+   "rs": 301.4
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-04-05",
+   "gor": 292.7,
+   "rs": 301.4
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-05-06",
+   "gor": 309.0,
+   "rs": 301.4
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-06-05",
+   "gor": 313.3,
+   "rs": 301.4
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-07-06",
+   "gor": 296.6,
+   "rs": 301.4
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-08-05",
+   "gor": 297.4,
+   "rs": 301.4
+  },
+  {
+   "well": "GL-02",
+   "time": "2025-09-05",
+   "gor": 301.5,
+   "rs": 301.4
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-01-09",
+   "gor": 234.3,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-02-06",
+   "gor": 223.9,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-03-09",
+   "gor": 220.5,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-04-08",
+   "gor": 216.8,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-05-09",
+   "gor": 219.3,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-06-08",
+   "gor": 235.5,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-07-09",
+   "gor": 225.8,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-08-08",
+   "gor": 188.6,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-03",
+   "time": "2025-09-08",
+   "gor": 227.8,
+   "rs": 222.0
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-01-12",
+   "gor": 281.3,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-02-09",
+   "gor": 213.7,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-03-12",
+   "gor": 232.4,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-04-11",
+   "gor": 267.9,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-05-12",
+   "gor": 230.6,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-06-11",
+   "gor": 278.4,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-07-12",
+   "gor": 206.7,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-08-12",
+   "gor": 248.5,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-04",
+   "time": "2025-09-11",
+   "gor": 246.7,
+   "rs": 237.5
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-01-15",
+   "gor": 272.2,
+   "rs": 325.7
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-02-11",
+   "gor": 297.2,
+   "rs": 325.7
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-03-15",
+   "gor": 312.1,
+   "rs": 325.7
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-04-14",
+   "gor": 309.2,
+   "rs": 325.7
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-05-15",
+   "gor": 326.2,
+   "rs": 325.7
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-07-15",
+   "gor": 319.3,
+   "rs": 325.7
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-08-15",
+   "gor": 362.6,
+   "rs": 325.7
+  },
+  {
+   "well": "GL-05",
+   "time": "2025-09-14",
+   "gor": 272.8,
+   "rs": 325.7
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-01-18",
+   "gor": 240.8,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-02-14",
+   "gor": 231.8,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-03-18",
+   "gor": 195.7,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-04-17",
+   "gor": 196.8,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-05-18",
+   "gor": 223.3,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-06-18",
+   "gor": 207.3,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-07-19",
+   "gor": 174.8,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-08-18",
+   "gor": 181.6,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-06",
+   "time": "2025-09-17",
+   "gor": 226.4,
+   "rs": 217.0
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-01-20",
+   "gor": 252.4,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-02-17",
+   "gor": 260.8,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-03-21",
+   "gor": 267.7,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-04-20",
+   "gor": 258.3,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-05-21",
+   "gor": 272.2,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-06-21",
+   "gor": 263.7,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-07-21",
+   "gor": 260.2,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-08-21",
+   "gor": 260.7,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-07",
+   "time": "2025-09-20",
+   "gor": 253.9,
+   "rs": 268.3
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-01-23",
+   "gor": 335.2,
+   "rs": 336.2
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-02-20",
+   "gor": 324.0,
+   "rs": 336.2
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-03-23",
+   "gor": 330.1,
+   "rs": 336.2
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-04-23",
+   "gor": 316.2,
+   "rs": 336.2
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-05-24",
+   "gor": 349.4,
+   "rs": 336.2
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-06-24",
+   "gor": 323.0,
+   "rs": 336.2
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-07-24",
+   "gor": 357.6,
+   "rs": 336.2
+  },
+  {
+   "well": "GL-08",
+   "time": "2025-09-24",
+   "gor": 324.1,
+   "rs": 336.2
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-01-26",
+   "gor": 162.9,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-02-24",
+   "gor": 155.3,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-03-27",
+   "gor": 180.3,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-04-27",
+   "gor": 169.7,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-05-27",
+   "gor": 152.5,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-06-27",
+   "gor": 134.7,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-07-27",
+   "gor": 161.7,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-08-27",
+   "gor": 178.8,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-09",
+   "time": "2025-09-27",
+   "gor": 163.7,
+   "rs": 160.0
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-01-28",
+   "gor": 213.1,
+   "rs": 230.0
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-02-27",
+   "gor": 234.5,
+   "rs": 230.0
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-03-30",
+   "gor": 224.1,
+   "rs": 230.0
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-04-30",
+   "gor": 217.7,
+   "rs": 230.0
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-06-30",
+   "gor": 243.6,
+   "rs": 230.0
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-07-30",
+   "gor": 231.1,
+   "rs": 230.0
+  },
+  {
+   "well": "GL-10",
+   "time": "2025-08-31",
+   "gor": 230.6,
+   "rs": 230.0
+  }
+ ],
+ "pta_synthetic": [
+  {
+   "method": "Model match (best AIC)",
+   "n": 180,
+   "k_err_median": 1.21,
+   "k_err_p90": 11.77,
+   "k_bias": -0.65,
+   "skin_err_median": 0.087,
+   "skin_err_p90": 1.122,
+   "dps_err_median": 1.65
+  },
+  {
+   "method": "Model match (infinite)",
+   "n": 180,
+   "k_err_median": 1.22,
+   "k_err_p90": 11.77,
+   "k_bias": -0.65,
+   "skin_err_median": 0.097,
+   "skin_err_p90": 1.122,
+   "dps_err_median": 2.11
+  },
+  {
+   "method": "Horner hourly data (F)",
+   "n": 180,
+   "k_err_median": 2.64,
+   "k_err_p90": 10.99,
+   "k_bias": -2.28,
+   "skin_err_median": 0.252,
+   "skin_err_p90": 1.104,
+   "dps_err_median": 6.39
+  },
+  {
+   "method": "Horner P1hr measured (E)",
+   "n": 180,
+   "k_err_median": 2.8,
+   "k_err_p90": 12.62,
+   "k_bias": -2.68,
+   "skin_err_median": 0.428,
+   "skin_err_p90": 2.587,
+   "dps_err_median": 9.41
+  },
+  {
+   "method": "Horner auto (v5)",
+   "n": 180,
+   "k_err_median": 2.8,
+   "k_err_p90": 12.62,
+   "k_bias": -2.68,
+   "skin_err_median": 0.262,
+   "skin_err_p90": 1.254,
+   "dps_err_median": 7.39
+  },
+  {
+   "method": "Superposition Horner",
+   "n": 180,
+   "k_err_median": 2.88,
+   "k_err_p90": 12.52,
+   "k_bias": -2.81,
+   "skin_err_median": 0.252,
+   "skin_err_p90": 1.231,
+   "dps_err_median": 6.98
+  },
+  {
+   "method": "Horner tp since 2025 (C)",
+   "n": 180,
+   "k_err_median": 3.27,
+   "k_err_p90": 13.12,
+   "k_bias": -3.14,
+   "skin_err_median": 0.295,
+   "skin_err_p90": 1.275,
+   "dps_err_median": 7.96
+  },
+  {
+   "method": "Horner window 1h-end (D)",
+   "n": 180,
+   "k_err_median": 5.11,
+   "k_err_p90": 32.96,
+   "k_bias": -3.58,
+   "skin_err_median": 0.427,
+   "skin_err_p90": 3.188,
+   "dps_err_median": 13.14
+  }
+ ]
+}

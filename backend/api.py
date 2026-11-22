@@ -17,7 +17,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 
-from backend import data, pages, report
+from backend import analysis, data, pages, report
 
 
 
@@ -124,11 +124,45 @@ def vfm_overview():
     return JSONResponse(to_json(pages.vfm_overview()))
 
 
-@app.get('/api/vfm/well/{well}')
-def vfm_well(well: str):
+def check_well(well):
     if well not in set(data.daily_rates().well_name):
         raise HTTPException(404, 'unknown well')
-    return JSONResponse(to_json(pages.vfm_well(well)))
+
+
+@app.get('/api/vfm/well/{well}')
+def vfm_well(well: str):
+    check_well(well)
+    return JSONResponse(to_json({**pages.vfm_well(well), 'band': analysis.band()}))
+
+
+@app.get('/api/vfm/well/{well}/ipr')
+def vfm_ipr(well: str):
+    check_well(well)
+    return JSONResponse(to_json(analysis.ipr(well)))
+
+
+@app.get('/api/vfm/validation')
+def vfm_validation():
+    return JSONResponse(to_json(analysis.vfm_validation()))
+
+
+@app.get('/api/vfm/forecast')
+def vfm_forecast(months: int = 6):
+    if not 1 <= months <= 24:
+        raise HTTPException(400, 'months must be between 1 and 24')
+    return JSONResponse(to_json(analysis.forecast(months)))
+
+
+@app.get('/api/pta/validation')
+def pta_validation():
+    return JSONResponse(to_json(analysis.pta_validation()))
+
+
+@app.get('/api/pta/event/{event_id}/sensitivity')
+def pta_sensitivity(event_id: int):
+    if not 0 <= event_id < len(data.pta_results()):
+        raise HTTPException(404, 'unknown event')
+    return JSONResponse(to_json(analysis.pta_sensitivity(event_id)))
 
 
 @app.get('/api/insights')

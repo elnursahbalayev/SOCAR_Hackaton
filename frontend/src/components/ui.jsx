@@ -145,3 +145,18 @@ export function ErrorBox({ error }) {
     </div>
   )
 }
+
+// Segmented tab switch, e.g. <Tabs tabs={[{ id: 'a', label: 'A', icon: Icon }]} value={tab} onChange={setTab} />
+export function Tabs({ tabs, value, onChange }) {
+  return (
+    <div className="inline-flex flex-wrap gap-1 rounded-xl border border-line bg-panel/70 p-1">
+      {tabs.map(({ id, label, icon: Icon }) => (
+        <button key={id} onClick={() => onChange(id)}
+          className={`flex items-center gap-2 rounded-lg px-3.5 py-1.5 text-[13px] transition ${value === id
+            ? 'bg-accent/15 font-semibold text-ink ring-1 ring-accent/40' : 'text-muted hover:bg-white/[0.04] hover:text-ink'}`}>
+          {Icon && <Icon size={14} className={value === id ? 'text-accent' : ''} />}{label}
+        </button>
+      ))}
+    </div>
+  )
+}

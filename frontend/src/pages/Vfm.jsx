@@ -1,9 +1,12 @@
 // Virtual flow meter: model card, daily rates per well vs measured tests, reservoir pressure, all-well table.
 import { useMemo, useState } from 'react'
-import { Download, FlaskConical, ShieldCheck } from 'lucide-react'
+import { Activity, Download, FlaskConical, ShieldCheck, TrendingDown } from 'lucide-react'
 import Plot from '../components/Plot'
-import { Card, ErrorBox, KpiCard, Pill, Skeleton } from '../components/ui'
+import { Card, ErrorBox, KpiCard, Pill, Skeleton, Tabs } from '../components/ui'
 import { COLORS, fmt, useApi } from '../lib'
+import VfmForecast from './VfmForecast'
+import VfmValidation from './VfmValidation'
+import WhatIf from './WhatIf'
 
 const FLUIDS = [
   { key: 'oil', label: 'Oil', unit: 'STB/d', color: COLORS.oil },
@@ -74,8 +77,16 @@ function ModelCard({ ov }) {
 // ---------- well charts ----------
 function RatesPlot({ d }) {
   const traces = []
+  const BAND = { oil: 'rgba(52,199,123,0.16)', water: 'rgba(76,141,255,0.16)', gas: 'rgba(240,96,93,0.16)' }
   FLUIDS.forEach((f, i) => {
     const ax = i ? `${i + 1}` : ''
+    if (d.band) {    // P10-P90 range: rate x (measured / predicted) quantiles of the forecast validation
+      traces.push({ x: d.daily.date, y: d.daily[f.key].map((v) => v * d.band[f.key].p10), showlegend: false, legendgroup: 'band',
+        type: 'scatter', mode: 'lines', line: { width: 0 }, hoverinfo: 'skip', xaxis: 'x', yaxis: `y${ax}` })
+      traces.push({ x: d.daily.date, y: d.daily[f.key].map((v) => v * d.band[f.key].p90), name: 'P10–P90 range', showlegend: !i,
+        legendgroup: 'band', type: 'scatter', mode: 'lines', line: { width: 0 }, fill: 'tonexty', fillcolor: BAND[f.key], hoverinfo: 'skip',
+        xaxis: 'x', yaxis: `y${ax}` })
+    }
     traces.push({ x: d.daily.date, y: d.daily[f.key], name: `${f.label} (VFM)`, type: 'scatter', mode: 'lines',
       line: { color: f.color, width: 1.6 }, xaxis: 'x', yaxis: `y${ax}` })
     if (d.tests) {
@@ -203,12 +214,24 @@ export default function Vfm() {
   const current = well || ov.data?.wells[0]?.well
   const d = useApi(current ? `/api/vfm/well/${current}` : null)
   const spark = useMemo(() => d.data?.daily.oil.slice(-90), [d.data])
+  const [tab, setTab] = useState(() => new URLSearchParams(window.location.search).get('tab') || 'rates')   // ?tab=forecast / validation
+  const tabs = [{ id: 'rates', label: 'Daily rates', icon: Activity }, { id: 'forecast', label: 'Forecast', icon: TrendingDown },
+    { id: 'validation', label: 'Validation', icon: ShieldCheck }]
 
   if (ov.error || d.error) return <ErrorBox error={ov.error || d.error} />
   if (!ov.data) return <div className="space-y-5"><Skeleton className="h-72" /><Skeleton className="h-96" /></div>
   const s = d.data?.summary
+  if (tab !== 'rates') {
+    return (
+      <div className="space-y-5">
+        <Tabs tabs={tabs} value={tab} onChange={setTab} />
+        {tab === 'forecast' ? <VfmForecast /> : <VfmValidation />}
+      </div>
+    )
+  }
   return (
     <div className="space-y-5">
+      <Tabs tabs={tabs} value={tab} onChange={setTab} />
       <ModelCard ov={ov.data} />
 
       <div className="flex flex-wrap gap-2">
@@ -238,7 +261,7 @@ export default function Vfm() {
 
         <div className="grid grid-cols-12 gap-5">
           <div className="col-span-12 space-y-5 xl:col-span-8">
-            <Card title={`${current} · daily rates`} subtitle="Line = VFM every day · circles = measured well tests (taken at the lower test-separator pressure)">
+            <Card title={`${current} · daily rates`} subtitle="Line = VFM every day · shaded = P10–P90 range from the forecast validation · circles = measured well tests">
               <RatesPlot d={d.data} />
             </Card>
             <Card title="Reservoir and flowing pressure" subtitle="Drawdown P_res − Pwf drives the oil rate; diamonds = reservoir pressure implied by each training test">
@@ -253,6 +276,7 @@ export default function Vfm() {
             </Card>
           </div>
         </div>
+        <WhatIf well={current} />
       </>)}
 
       <AllWells wells={ov.data.wells} selected={current} onSelect={setWell} />

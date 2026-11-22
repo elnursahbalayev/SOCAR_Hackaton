@@ -54,8 +54,7 @@ export default function Report() {
           extra={[{ href: '/api/vfm/export.csv', label: 'CSV', title: 'timestamp, well_name, oil_rate_stbd, water_rate_stbd, gas_rate_mscfd' }]}
           text="Daily oil, water and gas per well (date, well_name, oil_rate_stbd, water_rate_stbd, gas_rate_mscfd) + model info, validation and daily details." />
         <Deliverable icon={FileSpreadsheet} title="PTA results" href="/api/pta/export.xlsx" button="Excel"
-          extra={[{ href: '/api/pta/export.csv', label: 'CSV', title: 'well_name, shut_in_time, permeability_md, skin, delta_p_skin_psi, horner_slope (planned build-up tests)' },
-            { href: '/api/pta/all_shut_ins.csv', label: 'All shut-ins', title: 'CSV: every shut-in with its classification, reason and results' }]}
+          extra={[{ href: '/api/pta/export.csv', label: 'CSV', title: 'well_name, shut_in_time, permeability_md, skin, delta_p_skin_psi, horner_slope (planned build-up tests)' }]}
           text="Horner slope, skin, permeability and ΔP skin per build-up test + all shut-ins, details, sensitivity and method sheets." />
         <Deliverable icon={Images} title="PTA plots" href="/api/pta/plots.zip" button="ZIP of all plots" tone="line"
           text="History, Horner and log-log derivative plots plus the analytical model match for every shut-in." note="Generated on request (~10 s)" />

@@ -359,6 +359,11 @@ flowchart TB
 ```
 
 - **Same code.** The app runs exactly the code in `src/` that produced the deliverables (`src/pipeline.py`).
+- **Validation in the app.** The VFM and Well Test Analysis pages each have a Validation tab showing the evidence of sections 6–11 interactively. That covers official metrics, every test measured vs predicted, the error by forecast horizon, paired significance tests, the 47-model comparison, the separator and physics checks, the synthetic PTA benchmark and per-event sensitivity.
+- **Uncertainty.** Every daily rate carries a P10–P90 band: the 10th and 90th percentiles of measured / predicted in the time-forward validation (oil about ±6 %).
+- **Decision support.**
+  - IPR and what-if per well: q = J·(P_res − P_wf), Vogel below P_b, J ∝ 1/(ln(r_e/r_w) − 0.75 + s).
+  - A 3–12-month forecast from the reservoir-pressure and water-cut trends, with P_wf held at today's value.
 - **Proof.** Uploading only two months of raw files reproduces the GL-08 build-up result to the last digit.
 - **Missing files fall back to the stored field data:**
   - PVT and completion → the stored ones;
