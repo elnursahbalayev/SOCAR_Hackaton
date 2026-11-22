@@ -1,0 +1,19 @@
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# frontend (dist/ IS committed so the app runs without Node.js)
+frontend/node_modules/
+
+# large raw sensor file (put it in data/data/ locally to re-run the notebook)
+data/data/high_freq_data.csv
+data/processed/*.parquet
+
+# datasets uploaded in the app
+data/uploads/*
+!data/uploads/.gitkeep
+data/bundles/upload-*
+
+# local settings
+.env

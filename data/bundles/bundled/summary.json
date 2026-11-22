@@ -1,0 +1,158 @@
+{
+ "created": "2026-11-21 22:56",
+ "period": {
+  "start": "2025-01-01 00:00:00",
+  "end": "2025-09-30 23:59:00"
+ },
+ "wells": [
+  "GL-01",
+  "GL-02",
+  "GL-03",
+  "GL-04",
+  "GL-05",
+  "GL-06",
+  "GL-07",
+  "GL-08",
+  "GL-09",
+  "GL-10"
+ ],
+ "n_days": 273,
+ "files": [
+  {
+   "file": "high_freq_data.csv",
+   "type": "high_freq",
+   "rows": 3917073,
+   "wells": [
+    "GL-01",
+    "GL-02",
+    "GL-03",
+    "GL-04",
+    "GL-05",
+    "GL-06",
+    "GL-07",
+    "GL-08",
+    "GL-09",
+    "GL-10"
+   ],
+   "start": "2025-01-01 00:00:00",
+   "end": "2025-09-30 23:59:00",
+   "null_codes": 7418,
+   "duplicate_rows": 2513
+  },
+  {
+   "file": "choke_events.csv",
+   "type": "choke",
+   "rows": 65,
+   "wells": [
+    "GL-01",
+    "GL-02",
+    "GL-03",
+    "GL-04",
+    "GL-05",
+    "GL-06",
+    "GL-07",
+    "GL-08",
+    "GL-09",
+    "GL-10"
+   ],
+   "start": "2025-01-01 00:00:00",
+   "end": "2025-09-29 05:44:00"
+  },
+  {
+   "file": "well_tests.csv",
+   "type": "well_tests",
+   "rows": 85,
+   "wells": [
+    "GL-01",
+    "GL-02",
+    "GL-03",
+    "GL-04",
+    "GL-05",
+    "GL-06",
+    "GL-07",
+    "GL-08",
+    "GL-09",
+    "GL-10"
+   ],
+   "start": "2025-01-03 07:59:00",
+   "end": "2025-09-27 09:33:00"
+  },
+  {
+   "file": "reservoir_pvt.csv",
+   "type": "pvt",
+   "rows": 10,
+   "wells": [
+    "GL-01",
+    "GL-02",
+    "GL-03",
+    "GL-04",
+    "GL-05",
+    "GL-06",
+    "GL-07",
+    "GL-08",
+    "GL-09",
+    "GL-10"
+   ]
+  },
+  {
+   "file": "well_completion.csv",
+   "type": "completion",
+   "rows": 10,
+   "wells": [
+    "GL-01",
+    "GL-02",
+    "GL-03",
+    "GL-04",
+    "GL-05",
+    "GL-06",
+    "GL-07",
+    "GL-08",
+    "GL-09",
+    "GL-10"
+   ]
+  }
+ ],
+ "warnings": [],
+ "clean_report": {
+  "null_codes": {
+   "whp_psia": 1345,
+   "whp_downstream_psia": 905,
+   "dh_pressure_psia": 1406,
+   "dh_temperature_degf": 1190,
+   "annulus_pressure_psia": 1013,
+   "gas_lift_rate_mscfd": 1559
+  },
+  "duplicates_dropped": 2513,
+  "spikes_removed": {
+   "whp_psia": 108,
+   "whp_downstream_psia": 56,
+   "dh_pressure_psia": 105,
+   "dh_temperature_degf": 41,
+   "annulus_pressure_psia": 85,
+   "gas_lift_rate_mscfd": 54
+  },
+  "shut_in_minutes": 12879
+ },
+ "unknown_wells": [],
+ "accuracy_on_uploaded_tests": {
+  "oil": {
+   "R2": 1.0,
+   "MAPE": 1.507,
+   "WAPE": 1.261
+  },
+  "water": {
+   "R2": 0.998,
+   "MAPE": 2.485,
+   "WAPE": 2.247
+  },
+  "gas": {
+   "R2": 0.995,
+   "MAPE": 5.47,
+   "WAPE": 4.245
+  },
+  "n_tests": 85,
+  "n_in_sample": 85
+ },
+ "n_shut_ins": 6,
+ "n_buildup_tests": 3
+}

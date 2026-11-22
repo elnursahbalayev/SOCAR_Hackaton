@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+/* ------------------------------------------------------------------------------------------
+   Design tokens. Fluid colours follow the industry convention: oil green, water blue, gas red.
+   Accent (amber) is used sparingly: active navigation, workflow progress, primary actions.
+   ------------------------------------------------------------------------------------------ */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-bg: #07090c;
+  --color-panel: #0d1117;
+  --color-panel-2: #131a23;
+  --color-line: rgb(255 255 255 / 0.07);
+  --color-line-strong: rgb(255 255 255 / 0.12);
+  --color-ink: #e7edf4;
+  --color-muted: #8d9aab;
+  --color-faint: #5d6877;
+
+  --color-accent: #f5b544;
+  --color-oil: #34c77b;
+  --color-water: #4c8dff;
+  --color-gas: #f0605d;
+  --color-good: #34c77b;
+  --color-warn: #f5b544;
+  --color-bad: #f0605d;
+  --color-on-accent: #0b0e13;          /* text on amber buttons (dark in both themes) */
+}
+
+/* ------------------------------------------------------------------------------------------
+   Themes. Dark is the default; <html data-theme="light"> switches every token (toggle in the header).
+   --color-white is remapped in light mode so the subtle "white overlay" tints become dark tints.
+   ------------------------------------------------------------------------------------------ */
+:root {
+  color-scheme: dark;
+  --card-shadow: 0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 20px 40px -24px rgb(0 0 0 / 0.8);
+  --glow-a: rgb(245 181 68 / 0.07);
+  --glow-b: rgb(76 141 255 / 0.06);
+  --grid-line: rgb(255 255 255 / 0.022);
+  --tint-1: rgb(255 255 255 / 0.03);
+  --tint-2: rgb(255 255 255 / 0.07);
+  --scroll: rgb(255 255 255 / 0.12);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f3f5f8;
+  --color-panel: #ffffff;
+  --color-panel-2: #eef1f5;
+  --color-line: rgb(15 23 42 / 0.09);
+  --color-line-strong: rgb(15 23 42 / 0.17);
+  --color-ink: #101826;
+  --color-muted: #536073;
+  --color-faint: #8590a0;
+  --color-accent: #d18a12;
+  --color-oil: #1a9a56;
+  --color-water: #2f6fdb;
+  --color-gas: #d64545;
+  --color-good: #1a9a56;
+  --color-warn: #b7770a;
+  --color-bad: #d64545;
+  --color-white: #0f172a;
+  --card-shadow: 0 1px 2px 0 rgb(15 23 42 / 0.05), 0 12px 32px -20px rgb(15 23 42 / 0.25);
+  --glow-a: rgb(245 181 68 / 0.10);
+  --glow-b: rgb(76 141 255 / 0.08);
+  --grid-line: rgb(15 23 42 / 0.035);
+  --tint-1: rgb(15 23 42 / 0.04);
+  --tint-2: rgb(15 23 42 / 0.08);
+  --scroll: rgb(15 23 42 / 0.2);
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, var(--glow-a), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, var(--glow-b), transparent 60%),
+    var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* numbers line up in tables and KPI tiles */
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+/* thin scrollbars */
+* { scrollbar-width: thin; scrollbar-color: var(--scroll) transparent; }
+
+/* subtle engineering grid behind the main area */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.45s cubic-bezier(.2,.7,.2,1) both; }
+
+@keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
+.skeleton {
+  background: linear-gradient(90deg, var(--tint-1) 0%, var(--tint-2) 50%, var(--tint-1) 100%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: 8px;
+}
+
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.live-dot { animation: pulse-dot 2s ease-in-out infinite; }

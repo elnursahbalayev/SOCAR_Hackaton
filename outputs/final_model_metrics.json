@@ -1,0 +1,29 @@
+{
+ "model": "Final VFM (v5): physics + Gaussian process (water)",
+ "physics_options": {
+  "recency_tau": 120,
+  "gor_model": "rs",
+  "pres_local_bw": 90,
+  "j_source": "auto",
+  "j_shrink": 0.25
+ },
+ "n_tests": 85,
+ "loto_oil_R2": 0.9988,
+ "loto_oil_MAPE": 2.3918,
+ "loto_oil_WAPE": 2.0291,
+ "loto_water_R2": 0.9966,
+ "loto_water_MAPE": 3.4239,
+ "loto_water_WAPE": 3.0815,
+ "loto_gas_R2": 0.9946,
+ "loto_gas_MAPE": 5.4979,
+ "loto_gas_WAPE": 4.3279,
+ "forward_oil_R2": 0.9958,
+ "forward_oil_MAPE": 4.2788,
+ "forward_oil_WAPE": 3.5208,
+ "forward_water_R2": 0.9879,
+ "forward_water_MAPE": 4.5468,
+ "forward_water_WAPE": 4.9175,
+ "forward_gas_R2": 0.993,
+ "forward_gas_MAPE": 8.0342,
+ "forward_gas_WAPE": 5.6304
+}

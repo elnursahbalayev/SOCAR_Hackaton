@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <title>WellMind · Integrated Well Performance</title>
+    <script>
+      // apply the theme before the app loads (no dark/light flash): ?theme=dark|light in the URL,
+      // else the last choice saved in this browser, else light
+      (function () {
+        var t = new URLSearchParams(location.search).get('theme')
+        if (t !== 'dark' && t !== 'light') { try { t = localStorage.getItem('wellmind-theme') } catch (e) { t = null } }
+        document.documentElement.dataset.theme = t === 'dark' ? 'dark' : 'light'
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
