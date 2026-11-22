@@ -228,8 +228,8 @@ function ResultsTable({ events: all, selected, onSelect }) {
   return (
     <Card title="Build-up tests · deliverable" subtitle="Horner slope, skin, permeability and ΔP skin for every planned build-up test"
       bodyClass="overflow-x-auto"
-      actions={<a href="/api/pta/export.xlsx" className="flex items-center gap-2 rounded-lg bg-accent px-3 py-1.5 text-xs font-semibold text-on-accent
-        shadow-[0_8px_24px_-10px_rgba(245,181,68,0.8)] transition hover:brightness-110"><Download size={14} />Export Excel</a>}>
+      actions={<div className="flex gap-2"><a href="/api/pta/export.csv" className="flex items-center gap-2 rounded-lg border border-line px-3 py-1.5 text-xs font-semibold text-ink transition hover:border-line-strong"><Download size={14} />CSV</a><a href="/api/pta/export.xlsx" className="flex items-center gap-2 rounded-lg bg-accent px-3 py-1.5 text-xs font-semibold text-on-accent
+        shadow-[0_8px_24px_-10px_rgba(245,181,68,0.8)] transition hover:brightness-110"><Download size={14} />Export Excel</a></div>}>
       <table className="w-full text-[13px]">
         <thead><tr className="border-b border-line text-left text-[11px] uppercase tracking-[0.1em] text-faint">
           {head.map((h) => <th key={h} className="whitespace-nowrap px-4 py-3 font-medium">{h}</th>)}</tr></thead>

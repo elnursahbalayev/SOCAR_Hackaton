@@ -120,7 +120,7 @@ About 20 s after start-up the console prints `warm-up done`; from then on every 
 | ② Virtual Flow Meter | Model card and validation; daily rates per well vs measured tests; reservoir and flowing pressure; well calibration |
 | ③ Well Test Analysis | Every shut-in: history, log-log derivative, Horner and model-match plots; k, skin, ΔP skin, P*, flow efficiency; radial-flow window adjustable by hand; interpretation |
 | ④ Insights | Stimulation upside ($ at a chosen oil price), gas-lift efficiency, reservoir health vs bubble point, deferred oil, build-up test plan |
-| ⑤ Report | Downloads: VFM Excel, PTA Excel, PTA plots ZIP, HTML engineering report (print to PDF), the model `.pkl` |
+| ⑤ Report | Downloads: VFM and PTA results as **Excel or CSV** (CSV in the organisers' template format), all shut-ins CSV, PTA plots ZIP, HTML engineering report (print to PDF), the model `.pkl` |
 
 **Rebuild the frontend** (only after changing it): `cd frontend && npm install && npm run build`.
 

@@ -4,7 +4,8 @@ import { Brain, Download, ExternalLink, FileSpreadsheet, FileText, Images, Loade
 import { Card, ErrorBox, Pill, Skeleton } from '../components/ui'
 import { useApi } from '../lib'
 
-function Deliverable({ icon: Icon, title, text, href, button, tone = 'accent', note }) {
+// extra: secondary downloads of the same result, e.g. [{ href: '/api/vfm/export.csv', label: 'CSV' }]
+function Deliverable({ icon: Icon, title, text, href, button, tone = 'accent', note, extra = [] }) {
   const [busy, setBusy] = useState(false)
   return (
     <div className="rise flex flex-col rounded-2xl border border-line bg-panel/80 p-5">
@@ -19,6 +20,16 @@ function Deliverable({ icon: Icon, title, text, href, button, tone = 'accent', n
           ${tone === 'accent' ? 'bg-accent text-on-accent hover:brightness-110' : 'border border-line text-ink hover:border-line-strong'}`}>
         {busy ? <Loader2 size={14} className="animate-spin" /> : <Download size={14} />}{button}
       </a>
+      {extra.length > 0 && (
+        <div className="mt-2 flex gap-2">
+          {extra.map((x) => (
+            <a key={x.href} href={x.href} title={x.title}
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-line px-2 py-1.5 text-[11px] font-semibold text-ink transition hover:border-line-strong">
+              <Download size={12} />{x.label}
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -40,8 +51,11 @@ export default function Report() {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
         <Deliverable icon={FileSpreadsheet} title="VFM results" href="/api/vfm/export.xlsx" button="Excel"
+          extra={[{ href: '/api/vfm/export.csv', label: 'CSV', title: 'timestamp, well_name, oil_rate_stbd, water_rate_stbd, gas_rate_mscfd' }]}
           text="Daily oil, water and gas per well (date, well_name, oil_rate_stbd, water_rate_stbd, gas_rate_mscfd) + model info, validation and daily details." />
         <Deliverable icon={FileSpreadsheet} title="PTA results" href="/api/pta/export.xlsx" button="Excel"
+          extra={[{ href: '/api/pta/export.csv', label: 'CSV', title: 'well_name, shut_in_time, permeability_md, skin, delta_p_skin_psi, horner_slope (planned build-up tests)' },
+            { href: '/api/pta/all_shut_ins.csv', label: 'All shut-ins', title: 'CSV: every shut-in with its classification, reason and results' }]}
           text="Horner slope, skin, permeability and ΔP skin per build-up test + all shut-ins, details, sensitivity and method sheets." />
         <Deliverable icon={Images} title="PTA plots" href="/api/pta/plots.zip" button="ZIP of all plots" tone="line"
           text="History, Horner and log-log derivative plots plus the analytical model match for every shut-in." note="Generated on request (~10 s)" />

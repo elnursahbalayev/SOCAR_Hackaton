@@ -310,6 +310,8 @@ export default function Data() {
           <Link to="/pta" className="flex items-center gap-2 rounded-lg border border-line px-3 py-2 text-xs text-muted hover:text-ink">Well test analysis →</Link>
           <a href="/api/vfm/export.xlsx" className="flex items-center gap-2 rounded-lg border border-line px-3 py-2 text-xs text-muted hover:text-ink"><Download size={14} />VFM results (Excel)</a>
           <a href="/api/pta/export.xlsx" className="flex items-center gap-2 rounded-lg border border-line px-3 py-2 text-xs text-muted hover:text-ink"><Download size={14} />PTA results (Excel)</a>
+          <a href="/api/vfm/export.csv" className="flex items-center gap-2 rounded-lg border border-line px-3 py-2 text-xs text-muted hover:text-ink"><Download size={14} />VFM results (CSV)</a>
+          <a href="/api/pta/export.csv" className="flex items-center gap-2 rounded-lg border border-line px-3 py-2 text-xs text-muted hover:text-ink"><Download size={14} />PTA results (CSV)</a>
         </div>
       )}
       {info.data && <QualityReport info={info.data} />}

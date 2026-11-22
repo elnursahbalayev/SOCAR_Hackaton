@@ -21,6 +21,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / 'src'))
 
+import export          # noqa: E402
 import pipeline        # noqa: E402
 import pta             # noqa: E402
 
@@ -311,6 +312,22 @@ def pta_event_detail(event_id, window=None):
 def excel_bytes(kind):
     """The VFM or PTA results Excel of the active dataset (written by the pipeline)."""
     return (bundle_dir() / f'{kind}_results.xlsx' if kind == 'PTA' else bundle_dir() / 'VFM_predictions.xlsx').read_bytes()
+
+
+def csv_bytes(kind):
+    """The results of the active dataset as CSV (comma-separated, UTF-8 without BOM, LF line endings).
+    'VFM'     : the organisers' VFM template: timestamp, well_name, oil_rate_stbd, water_rate_stbd, gas_rate_mscfd
+    'PTA'     : the organisers' PTA template (planned build-up tests): well_name, shut_in_time, permeability_md,
+                skin, delta_p_skin_psi, horner_slope
+    'PTA_all' : every shut-in with its classification (planned / unplanned), reason and results
+    Made from the same Excel files as the Excel downloads, so both always agree."""
+    if kind == 'VFM':
+        df = export.vfm_submission(pd.read_excel(bundle_dir() / 'VFM_predictions.xlsx', sheet_name='predictions'))
+    elif kind == 'PTA':
+        df = export.pta_submission(pd.read_excel(bundle_dir() / 'PTA_results.xlsx', sheet_name='pta_results'))
+    else:
+        df = pd.read_excel(bundle_dir() / 'PTA_results.xlsx', sheet_name='all_shut_ins')
+    return df.to_csv(index=False, lineterminator=chr(10)).encode('utf-8')   # LF line endings
 
 
 # ---------------------------------------------------------------------------------------------

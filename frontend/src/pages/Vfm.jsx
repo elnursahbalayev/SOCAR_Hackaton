@@ -168,8 +168,8 @@ function AllWells({ wells, selected, onSelect }) {
   const head = ['Well', 'Oil', 'Water', 'Gas', 'WC %', 'P_res', 'ΔP_res / mo', 'J', 'J source', 'Cum oil', 'Oil WAPE']
   return (
     <Card title="All wells · latest day" subtitle="Click a row to open the well" bodyClass="overflow-x-auto"
-      actions={<a href="/api/vfm/export.xlsx" className="flex items-center gap-2 rounded-lg bg-accent px-3 py-1.5 text-xs font-semibold text-on-accent
-        transition hover:brightness-110"><Download size={14} />Export VFM Excel</a>}>
+      actions={<div className="flex gap-2"><a href="/api/vfm/export.csv" className="flex items-center gap-2 rounded-lg border border-line px-3 py-1.5 text-xs font-semibold text-ink transition hover:border-line-strong"><Download size={14} />CSV</a><a href="/api/vfm/export.xlsx" className="flex items-center gap-2 rounded-lg bg-accent px-3 py-1.5 text-xs font-semibold text-on-accent
+        transition hover:brightness-110"><Download size={14} />Export VFM Excel</a></div>}>
       <table className="w-full text-[13px]">
         <thead><tr className="border-b border-line text-left text-[11px] uppercase tracking-[0.1em] text-faint">
           {head.map((h) => <th key={h} className="whitespace-nowrap px-4 py-3 font-medium">{h}</th>)}</tr></thead>

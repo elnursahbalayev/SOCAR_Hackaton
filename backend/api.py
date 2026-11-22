@@ -96,6 +96,26 @@ def vfm_export():
     return excel_response('VFM', f"VFM_predictions_{data.ACTIVE['id']}.xlsx")
 
 
+def csv_response(kind, filename):
+    return Response(data.csv_bytes(kind), media_type='text/csv; charset=utf-8',
+                    headers={'Content-Disposition': f'attachment; filename="{filename}"'})
+
+
+@app.get('/api/vfm/export.csv')
+def vfm_export_csv():
+    return csv_response('VFM', f"VFM_predictions_{data.ACTIVE['id']}.csv")
+
+
+@app.get('/api/pta/export.csv')
+def pta_export_csv():
+    return csv_response('PTA', f"PTA_results_{data.ACTIVE['id']}.csv")
+
+
+@app.get('/api/pta/all_shut_ins.csv')
+def pta_all_shut_ins_csv():
+    return csv_response('PTA_all', f"PTA_all_shut_ins_{data.ACTIVE['id']}.csv")
+
+
 # ---------------------------------------------------------------------------------------------
 # VFM page, Insights page, Report page
 # ---------------------------------------------------------------------------------------------
