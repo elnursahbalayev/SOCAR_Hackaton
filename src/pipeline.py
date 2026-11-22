@@ -193,11 +193,19 @@ def run(paths, out_dir, progress=print, model_path=load.ROOT / 'models' / 'vfm_m
     rates_for_pta = combined_rates(new_rates, bundled_rates)
     events = pta.find_shut_ins(hf_clean)
     events = events[events.well_name.isin(model['wells'])].reset_index(drop=True)
+    skipped = []                                  # shut-ins that cannot be interpreted (reason given)
     pta_results = pta.analyze_all(hf_clean, events, rates_for_pta, pvt.set_index('well_name'),
-                                  completion.set_index('well_name'), choke) if len(events) else []
+                                  completion.set_index('well_name'), choke, skipped=skipped) if len(events) else []
+    kept = []
     for r in pta_results:
         p = pvt.set_index('well_name').loc[r['well_name']]
-        fits, best, dt_fit, dp_fit = pta_model.fit_all_models(r, p)
+        try:
+            fits, best, dt_fit, dp_fit = pta_model.fit_all_models(r, p)
+        except Exception as exc:                  # never let one event stop the whole upload
+            skipped.append({k: r[k] for k in ['well_name', 't_shut', 't_open', 'duration_hr', 'event_type']}
+                           | {'reason': f'model match failed ({type(exc).__name__}: {exc})'})
+            continue
+        kept.append(r)
         r.update({'model_boundary': best['boundary'], 'model_k_md': best['k_md'], 'model_skin': best['skin'],
                   'model_C_bbl_psi': best['C_bbl_psi'], 'model_boundary_ft': best['boundary_radius_ft'],
                   'model_rms_pct': best['rms_error_pct'],
@@ -206,6 +214,10 @@ def run(paths, out_dir, progress=print, model_path=load.ROOT / 'models' / 'vfm_m
                                                   best['radius_investigation_ft']),
                   'deferred_oil_stb': r['q_oil_stbd'] * r['duration_hr'] / 24,
                   '_fits': fits, '_best': best, '_dt_fit': dt_fit, '_dp_fit': dp_fit})
+    pta_results = kept
+    for sk in skipped:
+        warnings.append(f"{sk['well_name']} shut-in at {sk['t_shut']:%Y-%m-%d %H:%M} ({sk['duration_hr']:.1f} h) "
+                        f"not interpreted: {sk['reason']}")
 
     progress('export', 'Writing Excel results')
     daily_out = known[['date', 'well_name', 'on_stream_frac', 'no_data', 'dh_pressure_psia',
@@ -225,11 +237,16 @@ def run(paths, out_dir, progress=print, model_path=load.ROOT / 'models' / 'vfm_m
     details = pd.DataFrame([{k: v for k, v in r.items() if not k.startswith('_')} for r in pta_results])
     lead = ['well_name', 't_shut', 't_open', 'duration_hr', 'event_type', 'classification_reason', 'm_psi_cycle',
             'k_md', 'skin', 'dP_skin_psi', 'flow_efficiency', 'p_star_psia', 'pwf_psia', 'q_oil_stbd', 'tp_hr']
+    if skipped:                                       # listed too, with the reason they were not interpreted
+        details = pd.concat([details, pd.DataFrame(skipped).rename(columns={'reason': 'not_interpreted_reason'})],
+                            ignore_index=True)
     if len(details):                                  # readable sheet: who / when / what first, then results
+        lead = lead + ['not_interpreted_reason']
         details = details[[c for c in lead if c in details] + [c for c in details if c not in lead]]
     with pd.ExcelWriter(out_dir / 'PTA_results.xlsx', engine='openpyxl') as xl:
         if planned:
-            export.pta_table(details[details.event_type == 'planned build-up test']).to_excel(
+            interpreted = details[details.k_md.notna()]   # skipped shut-ins never enter the deliverable
+            export.pta_table(interpreted[interpreted.event_type == 'planned build-up test']).to_excel(
                 xl, sheet_name='pta_results', index=False)
         else:
             pd.DataFrame(columns=list(export.PTA_COLUMNS.values())).to_excel(xl, sheet_name='pta_results', index=False)

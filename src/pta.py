@@ -414,22 +414,41 @@ def classify_shut_ins(events, choke, min_test_hours=24):
     return out
 
 
-def analyze_all(hf, events, daily_rates, pvt, completion, choke, options=FINAL_PTA_OPTIONS):
+def analyze_all(hf, events, daily_rates, pvt, completion, choke, options=FINAL_PTA_OPTIONS, skipped=None):
     """Final automatic PTA of every shut-in (used by the notebooks, the app and the upload pipeline).
 
     events      : find_shut_ins(hf)
     daily_rates : DataFrame date, well_name, oil  (VFM predictions; must cover the days BEFORE each shut-in)
     completion  : indexed by well_name, with cum_oil_at_2025_01_01_stb (production before the data starts)
+    skipped     : optional list; shut-ins that cannot be interpreted are appended here (with the reason)
+                  instead of stopping the whole analysis
     Returns a list of result dicts (Horner analysis + event_type / classification_reason).
     Np (for tp) = cumulative oil before the data + VFM oil since the data start, up to the shut-in day.
+
+    A shut-in already in progress at the first minute of the data cannot be interpreted: Horner needs the
+    flowing pressure Pwf(dt = 0) just before the well was closed, and that moment is not in the data.
     """
     events = classify_shut_ins(events, choke)
+    first_minute = hf.groupby('well_name').timestamp.min()
     results = []
     for _, e in events.iterrows():
-        q = rate_before_shut_in(daily_rates, e.well_name, e.t_shut, options['q_days'])
-        r = daily_rates[(daily_rates.well_name == e.well_name) & (daily_rates.date < e.t_shut.normalize())]
-        cum = completion.loc[e.well_name, 'cum_oil_at_2025_01_01_stb'] + r.oil.sum()
-        res = analyze_event(hf, e, q, cum, pvt.loc[e.well_name], pwf_hours=options['pwf_hours'])
+        info = {'well_name': e.well_name, 't_shut': e.t_shut, 't_open': e.t_open, 'duration_hr': e.duration_hr,
+                'event_type': e.event_type}
+        if e.t_shut <= first_minute[e.well_name]:
+            if skipped is not None:
+                skipped.append({**info, 'reason': 'shut-in already in progress when the data starts: no flowing '
+                                                  'pressure before it, so it cannot be interpreted'})
+            continue
+        try:
+            q = rate_before_shut_in(daily_rates, e.well_name, e.t_shut, options['q_days'])
+            r = daily_rates[(daily_rates.well_name == e.well_name) & (daily_rates.date < e.t_shut.normalize())]
+            cum = completion.loc[e.well_name, 'cum_oil_at_2025_01_01_stb'] + r.oil.sum()
+            res = analyze_event(hf, e, q, cum, pvt.loc[e.well_name], pwf_hours=options['pwf_hours'])
+        except Exception as exc:                  # one bad event must never stop the other results
+            if skipped is None:
+                raise
+            skipped.append({**info, 'reason': f'analysis failed ({type(exc).__name__}: {exc})'})
+            continue
         res.update({'t_open': e.t_open, 'event_type': e.event_type, 'classification_reason': e.classification_reason,
                     'restart_steps': e.restart_steps, 'cum_oil_stb': cum})
         results.append(res)
