@@ -1,22 +1,55 @@
 // Reusable building blocks: Card, KpiCard, Sparkline, Pill, Skeleton.
-import { ArrowDownRight, ArrowUpRight, Info } from 'lucide-react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { ArrowDownRight, ArrowUpRight, Info, Maximize2, X } from 'lucide-react'
 import { pct } from '../lib'
 
-export function Card({ title, subtitle, actions, children, className = '', bodyClass = 'p-5' }) {
+// A card knows whether it contains a chart (Plot registers itself). Chart cards get a maximise button that
+// opens the whole card as a near-fullscreen overlay; Plot then redraws to fill it. Esc / click outside closes.
+const CardContext = createContext(null)
+export const useCard = () => useContext(CardContext)
+
+export function Card({ title, subtitle, actions, children, className = '', bodyClass = 'p-5', expandable }) {
+  const [hasPlot, setHasPlot] = useState(false)
+  const [full, setFull] = useState(false)
+  const canExpand = expandable ?? hasPlot
+  const ctx = useMemo(() => ({ full, registerPlot: () => setHasPlot(true) }), [full])
+
+  useEffect(() => {
+    if (!full) return undefined
+    const onKey = (e) => e.key === 'Escape' && setFull(false)
+    const scroll = document.body.style.overflow
+    document.body.style.overflow = 'hidden'                // no page scrolling behind the overlay
+    window.addEventListener('keydown', onKey)
+    return () => { window.removeEventListener('keydown', onKey); document.body.style.overflow = scroll }
+  }, [full])
+
+  const frame = full
+    ? 'fixed inset-3 z-50 flex flex-col rounded-2xl border border-line-strong bg-panel shadow-2xl md:inset-6'
+    : `rounded-2xl border border-line bg-panel/80 backdrop-blur-sm shadow-[var(--card-shadow)] ${className}`
   return (
-    <section className={`rise rounded-2xl border border-line bg-panel/80 backdrop-blur-sm
-      shadow-[var(--card-shadow)] ${className}`}>
-      {(title || actions) && (
-        <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
-          <div>
-            <h3 className="text-[13px] font-semibold tracking-wide text-ink">{title}</h3>
-            {subtitle && <p className="mt-0.5 text-xs text-muted">{subtitle}</p>}
-          </div>
-          {actions}
-        </header>
-      )}
-      <div className={bodyClass}>{children}</div>
-    </section>
+    <CardContext.Provider value={ctx}>
+      {full && <div className="fixed inset-0 z-40 bg-black/55 backdrop-blur-[2px]" onClick={() => setFull(false)} />}
+      <section className={`rise ${frame}`}>
+        {(title || actions || canExpand) && (
+          <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
+            <div>
+              <h3 className={`font-semibold tracking-wide text-ink ${full ? 'text-[15px]' : 'text-[13px]'}`}>{title}</h3>
+              {subtitle && <p className="mt-0.5 text-xs text-muted">{subtitle}</p>}
+            </div>
+            <div className="flex items-center gap-2">
+              {actions}
+              {canExpand && (
+                <button onClick={() => setFull(!full)} title={full ? 'Close (Esc)' : 'Enlarge'}
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-line text-faint transition hover:border-line-strong hover:text-ink">
+                  {full ? <X size={15} /> : <Maximize2 size={13} />}
+                </button>
+              )}
+            </div>
+          </header>
+        )}
+        <div className={full ? `${bodyClass} min-h-0 flex-1 overflow-auto` : bodyClass}>{children}</div>
+      </section>
+    </CardContext.Provider>
   )
 }
 
