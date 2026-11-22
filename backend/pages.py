@@ -5,10 +5,13 @@ Engineering logic stays simple and is explained next to each number:
   - stimulation upside uses the flow efficiency from the build-up analysis
   - bubble-point warnings compare reservoir / flowing pressure with Pb from the PVT file
 """
+from functools import lru_cache
+
 import numpy as np
 import pandas as pd
 
 from backend import data
+import load  # noqa: E402  (src/ is on the path via backend.data)
 
 DAYS_PER_MONTH = 30.4
 
@@ -30,13 +33,13 @@ def _well_rates(well):
     return r[r.well_name == well].sort_values('date')
 
 
-def _own_k_skin():
-    """k and skin per well from OUR build-up analysis (all shut-ins of the active dataset, averaged)."""
-    rows = pd.DataFrame([{'well_name': r['well_name'], 'k_md': r['k_md'], 'skin': r['skin'],
-                          'planned': r['event_type'] == 'planned build-up test'} for r in data.pta_results()])
-    if rows.empty:
-        return {}
-    return {w: g.mean(numeric_only=True).to_dict() | {'planned': bool(g.planned.any())} for w, g in rows.groupby('well_name')}
+@lru_cache
+def _training_k_skin():
+    """k and skin per well that the STORED VFM model was calibrated with: our own build-up analysis of the
+    training period (Jan-Sep 2025, data/processed/own_pta_k_skin.csv). Its Darcy J is what the model uses, whatever
+    dataset is active. Wells without a shut-in in the training data have none -> their J was fitted from tests."""
+    ks = load.load_own_k_skin()
+    return {} if ks is None else ks.to_dict('index')
 
 
 def well_summary(well):
@@ -47,7 +50,7 @@ def well_summary(well):
     model = data.vfm_model()
     tr = model['trends'].loc[well] if well in model['trends'].index else None
     pvt = data.bundle()['pvt'].loc[well]
-    ks = _own_k_skin().get(well)
+    ks = _training_k_skin().get(well)
     tests = data.bundle()['tests']
     t = tests[tests.well_name == well] if tests is not None else None
     wape = None
@@ -62,7 +65,7 @@ def well_summary(well):
         'p_res_slope_psi_month': recent_slope(g.date, g.p_res),
         'wc_slope_pp_month': recent_slope(flowing.date, flowing.water_cut),
         'J': tr.J if tr is not None else None,
-        'J_source': ('own build-up (Darcy)' if ks else 'fitted from well tests') if tr is not None else None,
+        'J_source': ('own build-up, Darcy (Jan-Sep)' if ks else 'fitted from well tests') if tr is not None else None,
         'k_md': ks['k_md'] if ks else None, 'skin': ks['skin'] if ks else None,
         'rs_scf_stb': float(tr.gor_coef[0]) if tr is not None else None,
         'pb_psia': pvt.bubble_point_pressure_psia,

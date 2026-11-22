@@ -1,0 +1,7 @@
+step,between_tests_oil_WAPE_pct,between_tests_water_WAPE_pct,between_tests_gas_WAPE_pct,forecast_oil_WAPE_pct,forecast_water_WAPE_pct,forecast_gas_WAPE_pct
+Repeat last test (naive),3.14,4.03,5.61,8.16,5.32,10.22
+"Physics: J x drawdown, trends",2.08,3.39,4.33,4.12,5.53,5.39
++ recent tests weighted,2.16,3.5,4.32,3.69,5.71,4.95
++ gas = oil x Rs,2.16,3.5,4.4,3.69,5.71,6.0
++ local reservoir-pressure trend,2.03,3.38,4.33,3.52,5.55,5.63
++ Gaussian process for water (final),2.03,3.08,4.33,3.52,4.92,5.63

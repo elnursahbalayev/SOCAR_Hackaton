@@ -150,8 +150,8 @@ function WellPanel({ s }) {
       <div className="divide-y divide-line">
         <Row label="Productivity index J" value={fmt(s.J, 2)} unit="STB/d/psi" hint="q_oil = J · (P_res − Pwf)" />
         <Row label="J source" value={s.J_source} />
-        <Row label="Permeability k (own PTA)" value={s.k_md != null ? fmt(s.k_md, 1) : '—'} unit={s.k_md != null ? 'md' : ''} />
-        <Row label="Skin (own PTA)" value={s.skin != null ? s.skin.toFixed(2) : '—'} />
+        <Row label="Permeability k (build-up, Jan–Sep)" hint="Value the stored model was calibrated with (VFM-PTA iteration, q = oil rate of the day before the shut-in). The Well Test Analysis page reports the deliverable values (q = 7-day mean rate), so they differ slightly." value={s.k_md != null ? fmt(s.k_md, 1) : '—'} unit={s.k_md != null ? 'md' : ''} />
+        <Row label="Skin (build-up, Jan–Sep)" hint="Value the stored model was calibrated with (VFM-PTA iteration, q = oil rate of the day before the shut-in). The Well Test Analysis page reports the deliverable values (q = 7-day mean rate), so they differ slightly." value={s.skin != null ? s.skin.toFixed(2) : '—'} />
         <Row label="Solution GOR Rs" value={fmt(s.rs_scf_stb)} unit="scf/STB" />
         <Row label="Bubble point Pb" value={fmt(s.pb_psia)} unit="psia" />
         <Row label="P_res − Pb margin" value={fmt(sub(s.p_res, s.pb_psia))} unit="psi" />

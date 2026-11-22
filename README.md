@@ -8,6 +8,29 @@ WellMind turns raw per-minute sensor data from gas-lifted wells into two things:
 
 Both run inside one web app. An engineer uploads raw files and gets rates, plots, reservoir properties, an interpretation and the export files.
 
+### How to read this repository
+
+| Order | Read | What you get |
+|---|---|---|
+| 1 | This README | Deliverables, results, how to run the app |
+| 2 | [**docs/METHODOLOGY.md**](docs/METHODOLOGY.md) | The whole method with diagrams: data problems, physics found in the data, model design, validation, the 47-experiment selection, PTA automation, every design decision with its evidence |
+| 3 | [**docs/EXPERIMENTS.md**](docs/EXPERIMENTS.md) | Every experiment's numbers (official metrics, both validation schemes, normal-day bias, PTA benchmark) |
+| 4 | [`notebooks/FINAL_VFM_PTA.ipynb`](notebooks/FINAL_VFM_PTA.ipynb) | All of it executed end to end, from the raw files to the deliverables |
+
+### Methodology at a glance
+
+```mermaid
+flowchart LR
+    RAW["Raw data<br/>sensors, chokes, 85 well tests,<br/>PVT, completion"] --> CLEAN["Cleaning<br/>10,380 bad values,<br/>14 label errors fixed"]
+    CLEAN --> VFM["VFM, physics-first<br/>oil = J x (P_res - Pwf)<br/>gas = oil x Rs<br/>water = physics + GP"]
+    VFM -- "rate q" --> PTA["Automatic PTA<br/>derivative window, Horner,<br/>k, skin, dP skin"]
+    PTA -- "k, skin for J" --> VFM
+    VFM --> VAL["Validated on 47 experiments<br/>between tests + forecasting<br/>+ normal-day bias check"]
+    PTA --> VAL2["Validated on 180 synthetic<br/>build-ups with known truth"]
+    VAL --> OUT["Deliverables + WellMind app"]
+    VAL2 --> OUT
+```
+
 ---
 
 ## Deliverables
@@ -20,6 +43,7 @@ Both run inside one web app. An engineer uploads raw files and gets rates, plots
 | 3 | Notebook, all cells run | [`notebooks/FINAL_VFM_PTA.ipynb`](notebooks/FINAL_VFM_PTA.ipynb) — end to end from the raw CSV files to every deliverable (plus the step-by-step research notebooks in [`notebooks/research/`](notebooks/research/)) |
 | 4 | Folder with all PTA plots | [`outputs/pta_plots/`](outputs/pta_plots/) — per shut-in: history + Horner + log-log derivative (`*_buildup.png`) and analytical model match (`*_model_match.png`); short unplanned shut-ins in `unplanned_shut_ins/` |
 | – | Application | [`backend/`](backend/) (FastAPI) + [`frontend/`](frontend/) (React, pre-built in `frontend/dist`) — see *Run the app* |
+| – | Methodology and experiment log | [`docs/METHODOLOGY.md`](docs/METHODOLOGY.md) (diagrams, design decisions) · [`docs/EXPERIMENTS.md`](docs/EXPERIMENTS.md) (all experiment tables) |
 
 ---
 
@@ -115,6 +139,8 @@ It rebuilds every deliverable and checks itself against our best submissions.
 
 ## Method in brief
 
+The full version, with diagrams and every design decision, is in [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
+
 **Cleaning**
 - Sensors: null codes (−999.25), exact duplicates, one-minute spikes (rolling median).
 - Labels: 5 sign flips; GL-06 gas reported in Sm³/d instead of Mscf/d.
@@ -151,6 +177,7 @@ It rebuilds every deliverable and checks itself against our best submissions.
 backend/        FastAPI app: api.py (endpoints), data.py (results bundles, uploads), pages.py (VFM / Insights), report.py
 frontend/       React + Vite + Tailwind + Plotly (src/), pre-built in dist/
 src/            engineering code: load, clean, features, vfm, pta, pta_model, pipeline, export, validation, ...
+docs/           METHODOLOGY.md (diagrams, design decisions) + EXPERIMENTS.md (all experiment tables)
 notebooks/      FINAL_VFM_PTA.ipynb (executed) + research/ (01–15: EDA, cleaning, ablations, PTA development)
 models/         vfm_model.pkl
 outputs/        result files, validation tables, VFM plots (plots/), PTA plots (pta_plots/)

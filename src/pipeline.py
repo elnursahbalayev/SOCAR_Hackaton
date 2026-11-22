@@ -223,6 +223,10 @@ def run(paths, out_dir, progress=print, model_path=load.ROOT / 'models' / 'vfm_m
                             ('units', 'oil, water: STB/d; gas: Mscf/d (formation gas)')])
     planned = [r for r in pta_results if r['event_type'] == 'planned build-up test']
     details = pd.DataFrame([{k: v for k, v in r.items() if not k.startswith('_')} for r in pta_results])
+    lead = ['well_name', 't_shut', 't_open', 'duration_hr', 'event_type', 'classification_reason', 'm_psi_cycle',
+            'k_md', 'skin', 'dP_skin_psi', 'flow_efficiency', 'p_star_psia', 'pwf_psia', 'q_oil_stbd', 'tp_hr']
+    if len(details):                                  # readable sheet: who / when / what first, then results
+        details = details[[c for c in lead if c in details] + [c for c in details if c not in lead]]
     with pd.ExcelWriter(out_dir / 'PTA_results.xlsx', engine='openpyxl') as xl:
         if planned:
             export.pta_table(details[details.event_type == 'planned build-up test']).to_excel(
